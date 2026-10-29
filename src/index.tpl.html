@@ -941,6 +941,7 @@ var root=document.documentElement;
 /* ---------- language ---------- */
 var LANG='fa';
 try{ if(localStorage.getItem('sd-lang')==='en') LANG='en'; }catch(e){}
+try{ var qLang=new URLSearchParams(location.search).get('lang'); if(qLang==='en'||qLang==='fa'){ LANG=qLang; try{ localStorage.setItem('sd-lang',qLang); }catch(e){} } }catch(e){}
 var T=function(fa,en){ return LANG==='en'?en:fa; };
 var num=function(n){ return Number(n).toLocaleString(LANG==='en'?'en-US':'fa-IR'); };
 var FAD='۰۱۲۳۴۵۶۷۸۹';
