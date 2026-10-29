@@ -1,0 +1,1469 @@
+<title>دکتر سینا دهقان</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap">
+<style>
+@font-face{font-family:"Parastoo";src:url(data:font/woff2;base64,{{FONT_R}}) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Parastoo";src:url(data:font/woff2;base64,{{FONT_B}}) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+:root{
+  --bg:#F7F2EC; --bg-2:#EFE7DC; --surface:#FFFDF9; --ink:#29282E; --muted:#57524F; --faint:#6F6A67; --line:#E2D7C8;
+  --accent:#BF7E0A; --accent-ink:#95600A; --on-accent:#FFFFFF;
+  --inv-bg:#29282E; --inv-bg-2:#323138; --inv-ink:#F7F2EC; --inv-muted:#CFC6BB; --gold:#F8C35B;
+  --nav-bg:rgba(247,242,236,.86); --shadow:0 24px 60px -28px rgba(41,40,46,.35);
+  --font:"Parastoo",Tahoma,"Segoe UI",sans-serif;
+  --gut:max(16px,env(safe-area-inset-left),env(safe-area-inset-right));
+  --wrap:1220px; --r:18px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1D1C21; --bg-2:#24232A; --surface:#2A2930; --ink:#F2ECE4; --muted:#BDB5AB; --faint:#A39B92; --line:#3A3840;
+    --accent:#F8C35B; --accent-ink:#F8C35B; --on-accent:#29282E;
+    --inv-bg:#141317; --inv-bg-2:#1E1D22; --nav-bg:rgba(29,28,33,.84); --shadow:0 24px 60px -28px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1D1C21; --bg-2:#24232A; --surface:#2A2930; --ink:#F2ECE4; --muted:#BDB5AB; --faint:#A39B92; --line:#3A3840;
+  --accent:#F8C35B; --accent-ink:#F8C35B; --on-accent:#29282E;
+  --inv-bg:#141317; --inv-bg-2:#1E1D22; --nav-bg:rgba(29,28,33,.84); --shadow:0 24px 60px -28px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html.lock{overflow:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.95;direction:rtl;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+h1,h2,h3,h4,p{margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;top:-60px;inset-inline-start:16px;z-index:200;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:10px;text-decoration:none}
+.skip:focus{top:12px}
+
+/* split words */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-block:.14em;margin-block:-.14em}
+.wi{display:inline-block;will-change:transform}
+
+/* ---------- Intro ---------- */
+#intro{position:fixed;inset:0;z-index:150;background:var(--inv-bg);color:var(--inv-ink);display:none;overflow:hidden}
+html.has-intro #intro{display:block}
+.i-corner{position:absolute;font-size:13px;letter-spacing:.04em;color:var(--inv-muted);display:flex;gap:10px;align-items:center;padding:20px var(--gut)}
+.i-tl{top:0;inset-inline-end:0}.i-tr{top:0;inset-inline-start:0}.i-bl{bottom:0;inset-inline-end:0}.i-br{bottom:0;inset-inline-start:0}
+.i-corner b{color:var(--gold);font-weight:700}
+.rec{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:.15}}
+.i-center{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:26px;padding:24px}
+.mol{width:min(64vw,300px);height:auto;overflow:visible}
+.mol .b{fill:none;stroke:var(--gold);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.mol .b2{stroke:var(--inv-muted);stroke-width:1.6}
+.mol text{fill:var(--inv-ink);font:700 15px/1 "Segoe UI",Tahoma,sans-serif;direction:ltr}
+.mol .dot{fill:var(--gold)}
+.i-words{height:1.6em;overflow:hidden;font-size:clamp(22px,4vw,34px);font-weight:700;text-align:center}
+.i-words span{display:block;height:1.6em;line-height:1.6em}
+.i-words span:last-child{color:var(--gold)}
+.i-meta{font-size:13px;color:var(--inv-muted);text-align:center}
+.i-bar{width:min(60vw,320px);height:2px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.i-bar i{display:block;height:100%;width:0;background:var(--gold)}
+.i-skip{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);background:transparent;border:1px solid rgba(247,242,236,.28);color:var(--inv-ink);padding:8px 18px;border-radius:999px;font-size:14px;min-height:44px}
+.i-skip:hover{border-color:var(--gold);color:var(--gold)}
+@media (max-width:560px){.i-bl,.i-br{display:none}}
+
+/* ---------- Nav ---------- */
+.prog{position:fixed;top:0;inset-inline:0;height:3px;z-index:120;pointer-events:none}
+.prog i{display:block;height:100%;width:100%;background:var(--accent);transform-origin:100% 50%;transform:scaleX(0)}
+.nav{position:fixed;top:12px;inset-inline:0;z-index:110;padding-inline:var(--gut);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.nav.hide{transform:translateY(-130%)}
+.nav-in{max-width:var(--wrap);margin-inline:auto;display:flex;align-items:center;gap:14px;background:var(--nav-bg);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border:1px solid var(--line);border-radius:999px;padding:6px 8px 6px 14px;box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;white-space:nowrap;padding-inline-start:6px}
+.brand img{width:34px;height:34px;object-fit:contain}
+.logo-d{display:none!important}
+:root[data-theme="dark"] .logo-l{display:none!important}:root[data-theme="dark"] .logo-d{display:block!important}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo-l{display:none!important}:root:not([data-theme="light"]) .logo-d{display:block!important}}
+.links{display:flex;gap:2px;margin-inline-start:auto;list-style:none;padding:0;margin-block:0}
+.links a{display:flex;align-items:baseline;gap:5px;white-space:nowrap;text-decoration:none;font-size:15px;color:var(--muted);padding:8px 10px;border-radius:999px;transition:color .25s,background .25s}
+.links a small{font-size:11px;color:var(--faint)}
+.links a:hover{color:var(--ink);background:var(--bg-2)}
+.links a[aria-current="true"]{color:var(--ink);background:var(--bg-2)}
+.links a[aria-current="true"] small{color:var(--accent-ink)}
+.links .beta-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);align-self:center}
+.nav-act{display:flex;gap:6px;align-items:center}
+.ibtn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;display:grid;place-items:center;color:var(--ink);transition:background .25s}
+.ibtn:hover{background:var(--bg-2)}
+.ibtn svg{width:20px;height:20px}
+.pill{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:var(--ink);color:var(--bg);text-decoration:none;font-size:15px;font-weight:700;white-space:nowrap}
+.menu-btn{display:none}
+@media (max-width:1180px){.links{display:none}.menu-btn{display:grid}.nav-act{margin-inline-start:auto}}
+@media (max-width:480px){.nav .pill{display:none}.brand span{font-size:15px}}
+.sun{display:none}
+:root[data-theme="dark"] .sun{display:block}:root[data-theme="dark"] .moon{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sun{display:block}:root:not([data-theme="light"]) .moon{display:none}}
+
+/* drawer menu (opens from the menu button, top-left of the bar) */
+#menuBg{position:fixed;inset:0;z-index:105;background:rgba(20,19,23,.28);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+#menuBg.open{opacity:1;visibility:visible}
+#menu{position:fixed;top:78px;inset-inline-end:var(--gut);z-index:115;width:min(340px,calc(100vw - 32px));max-height:calc(100svh - 100px);overflow:auto;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:10px;opacity:0;visibility:hidden;transform:translateY(-10px) scale(.97);transform-origin:12% 0;transition:opacity .3s,transform .4s cubic-bezier(.2,.8,.2,1),visibility .3s}
+#menu.open{opacity:1;visibility:visible;transform:none}
+#menu ol{list-style:none;margin:0;padding:0;display:grid}
+#menu a{display:flex;gap:14px;align-items:center;text-decoration:none;font-size:17px;font-weight:700;line-height:1.6;padding:11px 14px;border-radius:14px;transition:background .2s}
+#menu a:hover,#menu a:focus-visible{background:var(--bg-2)}
+#menu li + li a{border-top:1px solid var(--line);border-radius:0}
+#menu li:hover + li a{border-top-color:transparent}
+#menu a small{font-size:12px;color:var(--accent-ink);font-weight:700;min-width:22px}
+#menu .m-foot{display:flex;gap:8px;padding:10px 6px 4px}
+#menu .m-foot .pill{flex:1;justify-content:center}
+.menu-btn .x{display:none}.menu-btn[aria-expanded="true"] .x{display:block}.menu-btn[aria-expanded="true"] .bars{display:none}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:999px;border:1px solid currentColor;background:transparent;text-decoration:none;font-weight:700;font-size:16px;transition:background .3s,color .3s,border-color .3s;will-change:transform}
+.btn svg{width:18px;height:18px}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#29282E}
+.btn.gold:hover{background:#FFD27A}
+.btn.ghost-inv{color:var(--inv-ink);border-color:rgba(247,242,236,.35)}
+.btn.ghost-inv:hover{border-color:var(--gold);color:var(--gold)}
+.btn.ink{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn.line{color:var(--ink);border-color:var(--line);background:var(--surface)}
+.btn.line:hover{border-color:var(--accent)}
+.btn.sm{min-height:44px;padding:0 16px;font-size:14.5px}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100svh;background:var(--inv-bg);color:var(--inv-ink);overflow:hidden;display:flex;align-items:center;padding-block:120px 90px;isolation:isolate}
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:1}
+.hero::after{content:"";position:absolute;inset:auto 0 0;height:160px;background:linear-gradient(to top,var(--inv-bg),transparent);z-index:-1;pointer-events:none}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:48px;align-items:center;width:100%}
+.h-kick{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--inv-muted);margin-bottom:18px;flex-wrap:wrap}
+.h-kick .sep{width:36px;height:1px;background:var(--gold)}
+.h-name{font-size:clamp(24px,2.6vw,34px);font-weight:700;color:var(--inv-ink);margin-bottom:6px}
+.h1{font-size:clamp(68px,12.5vw,176px);font-weight:700;line-height:1.18;letter-spacing:-.01em}
+.h1 .gold{color:var(--gold)}
+.h-sub{font-size:clamp(22px,3vw,40px);font-weight:700;line-height:1.5;color:var(--gold);margin-top:4px}
+.h-lead{font-size:clamp(17px,1.5vw,20px);color:var(--inv-muted);max-width:56ch;margin-top:20px}
+.h-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.h-photo{position:relative;width:100%;aspect-ratio:1}
+.h-photo .ring{direction:ltr;position:absolute;inset:0;width:100%;height:100%;animation:spin 95s linear infinite}
+.h-photo .ring text{fill:var(--gold);font:700 12px/1 "Segoe UI",Tahoma,sans-serif;letter-spacing:.12em}
+.h-photo .frame{position:absolute;inset:13%;border-radius:50%;overflow:hidden;border:2px solid var(--gold);background:var(--inv-bg-2)}
+.h-photo .frame img{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
+.h-photo .orbit{position:absolute;inset:7%;border:1px dashed rgba(248,195,91,.35);border-radius:50%;animation:spin 60s linear infinite reverse}
+.h-photo .orbit i{position:absolute;top:-6px;left:50%;width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 18px var(--gold)}
+.h-side{display:grid;justify-items:center;gap:22px;justify-self:center;width:min(100%,420px)}
+.motto{display:inline-flex;align-items:center;gap:10px;background:#F7F2EC;color:#57524F;border:1px solid #E2D7C8;border-radius:999px;padding:8px 20px;font-size:15.5px;line-height:1.7;box-shadow:0 10px 30px -12px rgba(0,0,0,.4)}
+.motto i{width:9px;height:9px;border-radius:50%;background:#BF7E0A;flex:0 0 auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cue{position:absolute;bottom:22px;inset-inline-start:var(--gut);display:flex;align-items:center;gap:12px;font-size:13px;color:var(--inv-muted);letter-spacing:.1em}
+.cue span{width:1px;height:46px;background:rgba(247,242,236,.2);position:relative;overflow:hidden}
+.cue span::after{content:"";position:absolute;inset:0;background:var(--gold);animation:drip 1.8s ease-in-out infinite}
+@keyframes drip{0%{transform:translateY(-100%)}60%,100%{transform:translateY(100%)}}
+.h-roles{position:absolute;bottom:22px;inset-inline-end:var(--gut);font-size:13px;color:var(--inv-muted);display:flex;gap:8px;align-items:center}
+.h-roles b{color:var(--inv-ink)}
+@media (max-width:900px){
+  .hero-in{grid-template-columns:1fr;gap:28px}
+  .h-side{width:min(66vw,260px);order:-1}
+  .h-roles{display:none}
+}
+
+/* ---------- Marquee ---------- */
+.mq{background:var(--bg-2);color:var(--muted);border-block:1px solid var(--line);overflow:hidden;direction:ltr;padding-block:12px}
+.mq-row{display:flex;width:max-content;will-change:transform}
+.mq-set{display:flex;align-items:center;gap:40px;padding-inline-end:40px;direction:rtl;white-space:nowrap;font-size:16px;font-weight:400;line-height:1.8}
+.mq-set svg{width:15px;height:15px;color:var(--accent);flex:0 0 auto}
+
+/* ---------- Sections ---------- */
+.sec{padding-block:clamp(80px,12vw,150px);position:relative}
+.sh{display:flex;align-items:center;gap:14px;font-size:15px;color:var(--muted);margin-bottom:22px}
+.sh-n{font-weight:700;color:var(--accent-ink)}
+.sh-l{width:56px;height:1px;background:var(--accent);transform-origin:100% 50%}
+.h2{font-size:clamp(34px,5.4vw,72px);font-weight:700;line-height:1.35;letter-spacing:-.01em;max-width:18ch}
+.h2 em{font-style:normal;color:var(--accent-ink);position:relative}
+.lead{color:var(--muted);font-size:clamp(17px,1.4vw,19px);max-width:60ch;margin-top:16px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.5fr);gap:56px;align-items:start}
+#about-t{font-size:clamp(30px,3.4vw,48px);line-height:1.5}
+.about-txt{font-size:clamp(24px,3vw,40px);font-weight:700;line-height:1.75}
+.about-txt .sw{transition:none}
+.about-txt mark{background:none;color:var(--accent-ink)}
+.roles{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;align-items:center}
+.roles > span{font-size:15px;color:var(--muted)}
+.role{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:8px 14px;font-weight:700;font-size:15.5px}
+.role svg{width:18px;height:18px;color:var(--accent-ink)}
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);margin-top:clamp(56px,8vw,96px)}
+.num{padding:30px 32px 6px;border-inline-start:1px solid var(--line)}
+.num:first-child{border-inline-start:0;padding-inline-start:0}
+.num b{display:block;font-size:clamp(40px,5.4vw,76px);line-height:1.25;font-weight:400;letter-spacing:.01em}
+.num b sup{font-size:.42em;color:var(--accent);vertical-align:1em;margin-inline-start:8px;font-weight:400}
+.num > span{color:var(--muted);font-size:15px;line-height:1.8;display:block;margin-top:10px}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:24px}}
+@media (max-width:760px){.nums{grid-template-columns:repeat(2,minmax(0,1fr))}.num:nth-child(3){border-inline-start:0}.num{padding:22px 14px 10px}.num b{font-size:38px}.num > span{font-size:13.5px}}
+
+/* Path (horizontal) */
+.path{background:var(--bg-2);overflow:hidden}
+.path-pin{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-block:110px 60px}
+.path-top{width:100%;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.path-meter{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--muted);min-width:220px}
+.path-meter span{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden;border-radius:2px}
+.path-meter span i{position:absolute;inset:0;background:var(--accent);transform-origin:100% 50%;transform:scaleX(0)}
+.track{display:flex;gap:22px;padding-inline:var(--gut);width:max-content;will-change:transform}
+.pc{width:min(420px,78vw);flex:0 0 auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:12px;min-height:400px;position:relative;overflow:hidden}
+.pc .yr{font-size:clamp(34px,3.6vw,48px);font-weight:700;line-height:1.3;color:transparent;-webkit-text-stroke:1.2px var(--accent)}
+.pc .tag{align-self:flex-start;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:2px 12px;color:var(--muted)}
+.pc .tag.edu{border-color:var(--accent);color:var(--accent-ink)}
+.pc h3{font-size:24px;line-height:1.55}
+.pc .at{color:var(--muted);font-size:15.5px}
+.pc ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:15.5px}
+.pc li{position:relative;padding-inline-start:18px}
+.pc li::before{content:"";position:absolute;inset-inline-start:2px;top:.8em;width:6px;height:6px;background:var(--accent);transform:rotate(45deg)}
+.pc .ix{position:absolute;bottom:14px;inset-inline-end:20px;font-size:84px;font-weight:700;line-height:1;color:var(--bg-2);pointer-events:none}
+.pc > *:not(.ix){position:relative}
+.pc.now{border-color:var(--accent)}
+.pc.now .live{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--accent-ink);font-weight:700}
+.pc.now .live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);animation:blink 1.4s steps(2) infinite}
+.no-pin .track{flex-direction:column;width:auto;padding-inline:0}
+.no-pin .pc{width:auto;min-height:0}
+.no-pin .path-meter{display:none}
+.no-pin .path-pin{min-height:0}
+
+/* Projects (sticky stack) */
+.stack{display:grid;gap:28px;margin-top:56px}
+@media (min-width:861px){.stack{gap:46vh;padding-bottom:24vh}}
+.pj{position:sticky;top:96px;background:var(--surface);border:1px solid var(--line);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr);box-shadow:var(--shadow);transform-origin:50% 0;will-change:transform}
+.pj:nth-child(2){top:112px}.pj:nth-child(3){top:128px}.pj:nth-child(4){top:144px}
+.pj-media{position:relative;background:var(--bg-2);overflow:hidden;height:clamp(170px,19vw,260px)}
+.pj-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+.pj-media.fit{background:#455491}.pj-media.fit img{object-fit:contain;padding:18px}
+.pj-body{padding:clamp(22px,3vw,40px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:12px 40px;align-content:start}
+.pj-body > *{grid-column:1}
+.pj-body > ul{grid-column:2;grid-row:2 / span 3;align-self:start;padding-top:6px}
+.pj-body > .role-l{grid-column:1 / -1}
+.pj-body > .pj-top{grid-column:1 / -1}
+@media (max-width:860px){.pj-body{grid-template-columns:1fr}.pj-body > *,.pj-body > ul,.pj-body > .role-l{grid-column:1;grid-row:auto}}
+.pj-top{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:14.5px}
+.pj-top b{font-size:15px;color:var(--accent-ink)}
+.pj h3{font-size:clamp(24px,2.6vw,36px);line-height:1.5}
+.pj p{color:var(--muted)}
+.pj ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.pj li{position:relative;padding-inline-start:20px}
+.pj li::before{content:"";position:absolute;inset-inline-start:2px;top:.78em;width:7px;height:7px;background:var(--accent);transform:rotate(45deg)}
+.pj .role-l{padding-top:14px;border-top:1px solid var(--line);font-size:15px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.pj .role-l b{color:var(--ink)}
+.res{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:end;border:1px solid var(--accent);border-radius:16px;padding:16px 18px;background:color-mix(in srgb,var(--accent) 7%,var(--surface))}
+.res .big{font-size:clamp(40px,4.6vw,60px);font-weight:700;line-height:1.1;color:var(--accent-ink)}
+.res .big small{font-size:.32em;color:var(--muted);display:block;font-weight:400;line-height:1.6}
+.res .bars{display:grid;gap:8px;font-size:13.5px;color:var(--muted)}
+.res .bar{display:grid;grid-template-columns:56px 1fr;gap:10px;align-items:center}
+.res .bar span{height:12px;background:var(--bg-2);border-radius:6px;overflow:hidden}
+.res .bar span i{display:block;height:100%;background:var(--accent);border-radius:6px;transform-origin:100% 50%}
+.note{font-size:13.5px;color:var(--faint)}
+.pj-acts{display:flex;gap:8px;flex-wrap:wrap}
+.pj .btn.ink:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.pj.side{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+.pj.side .pj-media{height:auto;padding:clamp(18px,2.4vw,32px);display:flex;align-items:center;background:var(--bg-2)}
+.pj.side.flip .pj-media{order:2}
+.shot{width:100%;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface);box-shadow:0 20px 50px -24px rgba(41,40,46,.45)}
+.shot .dots{display:flex;padding:9px 12px;border-bottom:1px solid var(--line);background:var(--surface)}
+.pj .shot img{position:static;width:100%;height:auto;transform:none}
+.pj.side .pj-body{grid-template-columns:1fr}
+.pj.side .pj-body > *{grid-column:1;grid-row:auto}
+@media (max-width:860px){.pj.side{grid-template-columns:1fr}.pj.side.flip .pj-media{order:0}.pj.side .pj-media{aspect-ratio:auto}}
+.lnk{display:inline-flex;align-items:center;gap:6px;color:var(--accent-ink);font-weight:700;text-decoration:none;background:none;border:0;padding:6px 0;min-height:44px}
+.lnk svg{width:16px;height:16px}
+@media (max-width:860px){.pj{position:relative;top:auto!important}.pj-media{height:auto;aspect-ratio:16/9}.pj-media.wide{aspect-ratio:2.9/1}}
+
+/* Book */
+.book{background:var(--bg-2);color:var(--ink);overflow:hidden}
+.book-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:center}
+.cover-wrap{perspective:1200px;justify-self:center;width:min(100%,360px)}
+.cover{position:relative;transform-style:preserve-3d;transform:rotateY(-14deg) rotateX(4deg);transition:transform .2s ease-out;border-radius:4px 14px 14px 4px;box-shadow:-30px 40px 70px -24px rgba(41,40,46,.45)}
+.cover img{width:100%;border-radius:4px 14px 14px 4px}
+.cover::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,rgba(255,255,255,.18),transparent 9%,transparent 85%,rgba(0,0,0,.25));pointer-events:none}
+.stamp{position:absolute;bottom:-22px;inset-inline-end:-22px;width:104px;height:104px;border-radius:50%;background:var(--gold);color:#29282E;display:grid;place-content:center;text-align:center;font-weight:700;font-size:15px;line-height:1.5;transform:translateZ(40px) rotate(-12deg);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.book h2{font-size:clamp(32px,4.4vw,60px);max-width:none}
+.book .by{color:var(--accent-ink);font-weight:700;margin-top:10px;font-size:18px}
+.book p{color:var(--muted);margin-top:18px;max-width:58ch}
+.book ul{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.book li{position:relative;padding-inline-start:24px}
+.book li::before{content:"";position:absolute;inset-inline-start:2px;top:.75em;width:8px;height:8px;border:1px solid var(--accent);transform:rotate(45deg)}
+@media (max-width:860px){.book-in{grid-template-columns:1fr;gap:44px}}
+
+/* Lab */
+.lab-head .h2{max-width:none}
+.beta{display:inline-flex;align-items:center;gap:8px;font:700 12px/1 "Segoe UI",Tahoma,sans-serif;letter-spacing:.18em;color:var(--accent-ink);border:1px solid var(--accent);border-radius:999px;padding:7px 12px}
+.beta::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);animation:blink 1.2s steps(2) infinite}
+.lab-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:40px}
+.lab-tab{display:flex;align-items:center;gap:12px;border:1px solid var(--line);background:var(--surface);border-radius:16px;padding:10px 16px 10px 20px;text-align:right;min-height:56px;transition:border-color .25s,background .25s}
+.lab-tab b{display:block;font-size:16.5px}
+.lab-tab small{display:block;color:var(--muted);font-size:13.5px;line-height:1.6}
+.lab-tab .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--bg-2);flex:0 0 auto}
+.lab-tab .ic svg{width:22px;height:22px}
+.lab-tab[aria-selected="true"]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--surface))}
+.lab-tab[aria-selected="true"] .ic{background:var(--accent);color:var(--on-accent)}
+.lab-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;margin-top:20px;align-items:start}
+.device{border:1px solid var(--line);border-radius:22px;background:var(--surface);box-shadow:var(--shadow);overflow:hidden;transform-origin:50% 100%}
+.device.max{position:fixed;inset:10px;z-index:140;border-radius:16px;display:flex;flex-direction:column}
+.device.max .screen{height:auto;flex:1}
+.dbar{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line);background:var(--bg-2);flex-wrap:wrap}
+.dots{display:flex;gap:6px;direction:ltr}.dots i{width:11px;height:11px;border-radius:50%;background:var(--line)}
+.dots i:nth-child(1){background:#E0766A}.dots i:nth-child(2){background:#E8B44E}.dots i:nth-child(3){background:#7DB46C}
+.url{flex:1;min-width:160px;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font:13px/1.8 "Segoe UI",Tahoma,sans-serif;color:var(--muted);direction:ltr;justify-content:flex-start}
+.url svg{width:13px;height:13px;flex:0 0 auto}
+.dacts{display:flex;gap:6px}
+.dacts .ibtn{width:40px;height:40px;background:var(--surface)}
+.screen{position:relative;height:min(78vh,780px);min-height:520px;background:var(--bg)}
+.screen iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+.poster{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:18px;text-align:center;padding:24px;overflow:hidden}
+.poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;filter:blur(3px) saturate(.9);transform:scale(1.06);opacity:.55}
+.poster::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 35%,transparent),color-mix(in srgb,var(--bg) 88%,transparent))}
+.poster > *{position:relative}
+.poster h3{font-size:clamp(22px,2.6vw,32px)}
+.poster p{color:var(--muted);max-width:44ch}
+.play{width:96px;height:96px;border-radius:50%;background:var(--ink);color:var(--bg);border:0;display:grid;place-items:center;box-shadow:0 18px 50px -10px rgba(0,0,0,.45);position:relative}
+.play svg{width:34px;height:34px;transform:translateX(-3px)}
+.play::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:1px solid var(--accent);animation:ping 2s ease-out infinite}
+@keyframes ping{from{transform:scale(.9);opacity:1}to{transform:scale(1.35);opacity:0}}
+.loading{position:absolute;inset:0;display:grid;place-content:center;color:var(--muted);font-size:15px;background:var(--bg)}
+.side{display:grid;gap:16px}
+.card{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:20px}
+.card h4{font-size:17px;margin-bottom:10px}
+.card ol{margin:0;padding:0;list-style:none;display:grid;gap:10px;counter-reset:s}
+.card ol li{display:grid;grid-template-columns:28px 1fr;gap:10px;font-size:15px;line-height:1.85;counter-increment:s}
+.card ol li::before{content:counter(s,persian);width:28px;height:28px;border-radius:50%;border:1px solid var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:700;font-size:14px}
+.card ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:14.5px;color:var(--muted);line-height:1.85}
+.card ul li{display:grid;grid-template-columns:18px 1fr;gap:6px}
+.card ul li svg{width:16px;height:16px;margin-top:.45em;color:var(--accent-ink)}
+.resets{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+@media (max-width:1020px){.lab-grid{grid-template-columns:1fr}.side{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}}
+@media (max-width:560px){.screen{height:76svh;min-height:480px}.dbar .url{order:3;flex-basis:100%}}
+
+/* Gallery */
+#gal-t{max-width:20ch}
+.gal-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:0 16px;min-height:44px;font-size:15px;color:var(--muted)}
+.filters button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.gal{columns:3 280px;column-gap:16px;margin-top:36px}
+.gi{break-inside:avoid;margin-bottom:16px;display:block;width:100%;border:0;padding:0;background:var(--bg-2);border-radius:16px;overflow:hidden;position:relative;text-align:right}
+.gi img{width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.gi:hover img{transform:scale(1.05)}
+.gi span{position:absolute;inset:auto 0 0;padding:28px 14px 12px;background:linear-gradient(transparent,rgba(20,19,23,.82));color:#F7F2EC;font-size:14px;line-height:1.7;opacity:0;transform:translateY(8px);transition:opacity .35s,transform .35s}
+.gi:hover span,.gi:focus-visible span{opacity:1;transform:none}
+@media (hover:none){.gi span{opacity:1;transform:none}}
+.vid{margin:36px 0 0;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:14px}
+.vid[hidden]{display:none}
+.vid-box{border-radius:14px;overflow:hidden;background:#000;aspect-ratio:852/480}
+.vid video{width:100%;height:100%;display:block;object-fit:contain}
+.vid figcaption{display:grid;gap:8px;padding:8px 10px 8px 18px}
+.vid figcaption b{font-size:clamp(20px,2vw,26px);line-height:1.6}
+.vid figcaption > span:last-child{color:var(--muted);font-size:15.5px}
+.vtag{font-size:13.5px;color:var(--accent-ink);font-weight:700}
+@media (max-width:860px){.vid{grid-template-columns:1fr}.vid figcaption{padding:4px 6px 8px}}
+.gcount{color:var(--muted);font-size:14.5px;margin-top:10px}
+
+/* Skills & docs */
+.sk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);margin-top:48px}
+.sk > div{padding:28px 24px 8px;border-inline-start:1px solid var(--line)}
+.sk > div:first-child{border-inline-start:0;padding-inline-start:0}
+.sk .k{font-size:14px;color:var(--accent-ink);font-weight:700}
+.sk h3{font-size:22px;margin:4px 0 14px}
+.sk ul{margin:0;padding:0;list-style:none;display:grid;gap:0}
+.sk li{padding:10px 0;border-bottom:1px solid var(--line);font-size:16px}
+.sk li:last-child{border-bottom:0}
+@media (max-width:860px){.sk{grid-template-columns:1fr}.sk > div{border-inline-start:0;padding-inline-start:0;border-bottom:1px solid var(--line)}}
+.ints{display:flex;flex-wrap:wrap;gap:0;margin-top:56px;align-items:center;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+.ints > *{padding:12px 18px;border-inline-start:1px solid var(--line);font-size:15.5px}
+.ints > b{border-inline-start:0;background:var(--bg-2)}
+.docs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:64px}
+.doc{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden;display:flex;flex-direction:column}
+.doc button,.doc a.sheet{border:0;padding:0;background:var(--bg-2);aspect-ratio:4/3;overflow:hidden;display:block;width:100%}
+.doc img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .8s}
+.doc:hover img{transform:scale(1.04)}
+.doc a.sheet{display:grid;place-content:center;justify-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700}
+.doc a.sheet svg{width:56px;height:56px;color:var(--accent-ink)}
+.doc div{padding:16px 18px}
+.doc h3{font-size:18px}
+.doc p{color:var(--muted);font-size:14.5px}
+@media (max-width:860px){.docs{grid-template-columns:1fr}}
+.courses{columns:2 280px;column-gap:40px;margin:28px 0 0;padding:0;list-style:none}
+.courses li{break-inside:avoid;padding:10px 0;border-bottom:1px solid var(--line);font-size:15.5px;color:var(--muted)}
+.courses li b{color:var(--ink)}
+
+/* Contact */
+.contact{background:var(--inv-bg);color:var(--inv-ink);overflow:hidden}
+.contact .sh{color:var(--inv-muted)}.contact .sh-n{color:var(--gold)}.contact .sh-l{background:var(--gold)}
+.big-cta{font-size:clamp(46px,10vw,150px);font-weight:700;line-height:1.25;letter-spacing:-.015em}
+.big-cta .hl{color:var(--gold)}
+.c-rows{display:grid;margin-top:56px;border-top:1px solid rgba(247,242,236,.14)}
+.c-row{display:grid;grid-template-columns:140px minmax(0,1fr) auto;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(247,242,236,.14)}
+.c-row small{color:var(--inv-muted);font-size:14.5px}
+.c-row .v{font-size:clamp(17px,2.2vw,28px);font-weight:700;overflow-wrap:anywhere}
+.c-row .act{display:flex;gap:8px}
+.c-row .act .btn{color:var(--inv-ink);border-color:rgba(247,242,236,.3)}
+.c-row .act .btn:hover{border-color:var(--gold);color:var(--gold)}
+@media (max-width:640px){.c-row{grid-template-columns:1fr;gap:6px}}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;color:var(--inv-muted);font-size:14px}
+.foot a{color:var(--inv-ink)}
+.toast{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%) translateY(calc(100% + 40px));visibility:hidden;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 18px;z-index:160;font-size:15px;transition:transform .35s cubic-bezier(.2,.8,.2,1);max-width:calc(100vw - 32px)}
+.toast.show{transform:translateX(-50%) translateY(0);visibility:visible}
+
+/* Lightbox */
+dialog#lb{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);max-height:92vh;color:#F7F2EC}
+dialog#lb::backdrop{background:rgba(20,19,23,.9)}
+#lb img{max-height:78vh;width:auto;max-width:100%;margin-inline:auto;border-radius:12px}
+#lb .cap{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px;font-size:15px;direction:rtl}
+#lb .nv{display:flex;gap:8px}
+#lb .ibtn{color:#F7F2EC;border-color:rgba(247,242,236,.3)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  #intro{display:none!important}
+}
+
+/* ===== v3 additions ===== */
+
+.gi.ss{aspect-ratio:auto!important;position:relative;overflow:hidden;border-radius:16px;background:var(--bg-2)}
+.gi.ss .slides img{transition-property:clip-path}
+.gi.ss:hover .slides img{transform:none}
+.ss .s-cap{top:auto;bottom:16px;inset-inline-start:16px;max-width:calc(100% - 32px);font-weight:400;font-size:14px}
+.ss .s-num{position:absolute;z-index:3;top:14px;inset-inline-end:14px;background:rgba(41,40,46,.82);color:#F7F2EC;border-radius:999px;padding:3px 12px;font-size:13px;font-weight:400;line-height:1.8}
+.ss .ss-open{position:absolute;inset:0;z-index:4;background:transparent;border:0;cursor:zoom-in;padding:0}
+.h2{max-width:none!important;font-size:clamp(30px,3.4vw,50px);text-wrap:balance}
+#about-t{font-size:clamp(30px,3.4vw,50px)}
+.book h2{font-size:clamp(28px,3vw,44px)}
+@media (min-width:1100px){.sec .h2,.path .h2{white-space:nowrap}}
+.about-grid{grid-template-columns:minmax(0,1fr)!important;gap:28px}
+.about-grid > *,.path-top > div,.lab-head > div,.book-in > div{min-width:0}
+.gal-top > div{min-width:0;flex:1 1 100%}
+.path-top > div:first-child{flex:1 1 auto}
+.sec .h2,.path .h2{overflow:visible}
+.about-txt{max-width:none}
+#gal-t{max-width:none}
+.pj .pj-media.shot1 img{object-fit:cover;object-position:center top;transform:none}
+/* gallery: tidy equal tiles */
+.gal{columns:auto!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;grid-auto-flow:dense}
+.gal.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gal.c1{grid-template-columns:minmax(0,1fr);max-width:640px}
+.gi{margin:0!important;aspect-ratio:4/3}
+.gi img{width:100%;height:100%!important;object-fit:cover}
+.gi.big{grid-column:span 2;grid-row:span 2}
+@media (max-width:760px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* print the resume only */
+@page{size:A4;margin:0}
+@media print{
+  html.print-resume body > *:not(#pdfv){display:none!important}
+  html.print-resume #pdfv{position:static!important;display:block!important;width:auto!important;height:auto!important;max-height:none!important;border:0;border-radius:0;overflow:visible!important;box-shadow:none;background:#fff}
+  html.print-resume #pdfv::backdrop{display:none}
+  html.print-resume .pdf-h{display:none!important}
+  html.print-resume .pdf-b{display:block!important;overflow:visible!important;padding:0!important;background:#fff!important}
+  html.print-resume .pdf-b img{display:block;width:210mm!important;height:297mm!important;max-width:none!important;border-radius:0!important;box-shadow:none!important;break-after:page;page-break-after:always}
+}
+.motto{white-space:nowrap}
+@media (max-width:560px){.motto{font-size:13.5px;padding:7px 14px}}
+html[dir="ltr"] .card ol li::before{content:counter(s)}
+.brand img{width:48px;height:48px}
+.nav-in{padding-block:4px}
+/* language */
+.lang{font:700 14px/1 "Manrope","Segoe UI",Tahoma,sans-serif;letter-spacing:.04em}
+html[lang="en"]{--font:"Manrope","Segoe UI",Tahoma,sans-serif}
+html[dir="ltr"] body{direction:ltr}
+html[dir="ltr"] .mq-set,html[dir="ltr"] #lb .cap,html[dir="ltr"] .toast,html[dir="ltr"] .pdf-h{direction:ltr}
+html[dir="ltr"] .prog i,html[dir="ltr"] .sh-l,html[dir="ltr"] .path-meter span i,html[dir="ltr"] .res .bar span i{transform-origin:0 50%}
+html[dir="ltr"] svg.arr,html[dir="ltr"] #lbPrev svg,html[dir="ltr"] #lbNext svg{transform:scaleX(-1)}
+html[lang="en"] .h1{font-size:clamp(54px,8.6vw,132px);letter-spacing:-.035em;line-height:1.05}
+html[lang="en"] .h-sub{line-height:1.3;margin-top:14px}
+html[lang="en"] .h2{letter-spacing:-.025em;line-height:1.15}
+html[lang="en"] .big-cta{letter-spacing:-.03em;line-height:1.05}
+html[lang="en"] .about-txt{line-height:1.55;letter-spacing:-.01em}
+html[lang="en"] body{line-height:1.7}
+html[lang="en"] .pc .yr{font-size:clamp(30px,3vw,42px);letter-spacing:-.02em}
+html[lang="en"] .w{padding-block:.08em;margin-block:-.08em}
+
+/* projects: equal cards, full images, slides */
+.pj{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto 1fr;align-content:start}
+.pj .pj-media{height:320px;padding:0;display:block}
+.pj .pj-media > img{transform:none}
+.pj-body{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)!important;grid-template-rows:auto 1fr auto;gap:12px 44px}
+.pj-body > .pj-top{grid-column:1 / -1;grid-row:1}
+.pj-body > .pj-main{grid-column:1;grid-row:2;display:grid;gap:12px;align-content:start}
+.pj-body > .pj-aside{grid-column:2;grid-row:2;display:grid;gap:14px;align-content:start;padding-top:6px}
+.pj-body > .role-l{grid-column:1 / -1;grid-row:3;align-self:end}
+@media (max-width:860px){
+  .pj .pj-media{height:auto;aspect-ratio:3/1}
+  .pj-body{grid-template-columns:1fr!important}
+  .pj-body > *{grid-column:1!important;grid-row:auto!important}
+}
+.slides{position:absolute;inset:0;overflow:hidden;background:var(--bg-2)}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;visibility:hidden}
+.slides img.on{visibility:visible;z-index:1}
+.slides img.in{visibility:visible;z-index:2;clip-path:inset(0 0 0 100%);transition:clip-path .85s cubic-bezier(.55,.06,.9,.35)}
+html[dir="ltr"] .slides img.in{clip-path:inset(0 100% 0 0)}
+.slides img.in.go{clip-path:inset(0 0 0 0)}
+.s-cap{position:absolute;z-index:3;top:14px;inset-inline-start:14px;background:rgba(41,40,46,.82);color:#F7F2EC;border-radius:999px;padding:4px 14px;font-size:13.5px;line-height:1.8;backdrop-filter:blur(6px)}
+.s-dots{position:absolute;z-index:3;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;background:rgba(41,40,46,.55);padding:6px 8px;border-radius:999px}
+.s-dots button{width:26px;height:26px;border:0;background:transparent;padding:0;display:grid;place-items:center}
+.s-dots button i{display:block;width:8px;height:8px;border-radius:50%;background:rgba(247,242,236,.55);transition:width .3s,background .3s}
+.s-dots button[aria-current="true"] i{width:22px;border-radius:4px;background:#F8C35B}
+.s-prog{position:absolute;z-index:3;inset:auto 0 0 0;height:3px;background:transparent}
+.s-prog i{display:block;height:100%;width:0;background:var(--accent)}
+
+/* lab: use button instead of play */
+.use{display:inline-flex;align-items:center;gap:12px;min-height:60px;padding:0 28px 0 24px;border-radius:999px;background:var(--ink);color:var(--bg);border:0;font-weight:700;font-size:17px;box-shadow:0 18px 50px -14px rgba(0,0,0,.45);transition:background .25s,color .25s,transform .25s}
+html[dir="ltr"] .use{padding:0 24px 0 28px}
+.use svg{width:24px;height:24px;flex:0 0 auto}
+.use:hover{background:var(--accent);color:var(--on-accent);transform:translateY(-2px)}
+.use-hint{font-size:13.5px;color:var(--muted)}
+
+/* resume card + viewer */
+.doc .rthumb{border:0;padding:0;background:var(--bg-2);aspect-ratio:4/3;overflow:hidden;display:block;width:100%;position:relative;cursor:pointer}
+.doc .rthumb img{width:100%;height:auto;object-fit:cover;object-position:top}
+.doc .rthumb span{position:absolute;inset:auto 12px 12px;display:flex;justify-content:center;align-items:center;gap:8px;background:var(--ink);color:var(--bg);border-radius:999px;min-height:42px;font-weight:700;font-size:15px;opacity:.94}
+.doc .rthumb span svg{width:18px;height:18px}
+dialog#pdfv{border:0;padding:0;width:min(940px,96vw);height:min(94vh,1200px);max-height:94vh;border-radius:18px;background:var(--surface);color:var(--ink);overflow:hidden}
+dialog#pdfv[open]{display:flex;flex-direction:column}
+dialog#pdfv::backdrop{background:rgba(20,19,23,.8)}
+.pdf-h{display:flex;align-items:center;gap:10px;padding:10px 12px 10px 16px;border-bottom:1px solid var(--line);background:var(--bg-2);direction:rtl}
+.pdf-h b{flex:1;font-size:16px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pdf-b{flex:1;overflow:auto;padding:18px;display:grid;gap:18px;justify-items:center;background:var(--bg)}
+.pdf-b img{width:100%;max-width:820px;height:auto;border-radius:6px;box-shadow:0 10px 30px -12px rgba(41,40,46,.35);background:#fff}
+.docs{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.doc button:not(.rthumb),.doc .rthumb{position:relative;display:block!important;padding:0!important;aspect-ratio:4/3}
+.doc button img,.doc .rthumb img{position:absolute!important;inset:14px 14px 0;width:calc(100% - 28px)!important;height:calc(100% - 14px)!important;max-width:none;margin:0;object-fit:contain!important;object-position:center bottom!important;filter:drop-shadow(0 6px 14px rgba(41,40,46,.18));box-shadow:none}
+.doc button:not(.rthumb) img{inset:14px;height:calc(100% - 28px)!important;object-position:center!important}
+.doc:hover button img{transform:scale(1.03)}
+.doc > div{min-height:84px}
+@media (max-width:860px){.docs{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (max-width:520px){.docs{grid-template-columns:minmax(0,1fr)!important}}
+#about-t{font-size:clamp(32px,3.9vw,58px)!important;-webkit-text-stroke:1.2px currentColor;paint-order:stroke fill;letter-spacing:0;margin-bottom:18px}
+html[lang="en"] #about-t{-webkit-text-stroke:.9px currentColor}
+</style>
+
+<a class="skip" href="#main" data-en="Skip to content">رفتن به محتوا</a>
+
+<div id="intro" aria-hidden="true">
+  <div class="i-corner i-tl"><span class="rec"></span><span data-en="Professional profile">پرونده‌ی حرفه‌ای</span><b data-en="Dr. Sina Dehghan">دکتر سینا دهقان</b></div>
+  <div class="i-corner i-tr"><span class="ltr" id="tc">TC 00:00:00:00</span></div>
+  <div class="i-corner i-bl"><span>Pharm.D</span><span>·</span><span data-en="Mashhad">مشهد</span></div>
+  <div class="i-corner i-br"><span data-en="Structure detected:">ساختار شناسایی‌شده:</span><b id="i-found">۰</b><span data-en="of 11 bonds">از ۱۱ پیوند</span></div>
+  <div class="i-center">
+    <svg class="mol" viewBox="-110 -125 220 270" aria-hidden="true">
+      <g id="molb">
+        <path class="b" d="M0,-40 L34.6,-20"/><path class="b" d="M34.6,-20 L34.6,20"/><path class="b" d="M34.6,20 L0,40"/>
+        <path class="b" d="M0,40 L-34.6,20"/><path class="b" d="M-34.6,20 L-34.6,-20"/><path class="b" d="M-34.6,-20 L0,-40"/>
+        <path class="b b2" d="M26,-15 L26,15"/><path class="b b2" d="M-4,32 L-26,19.5"/><path class="b b2" d="M-26,-19.5 L-4,-32"/>
+        <path class="b" d="M0,-40 L0,-74"/><path class="b" d="M0,40 L0,70"/>
+        <path class="b" d="M14,90 L36,102"/><path class="b" d="M36,102 L36,132"/><path class="b b2" d="M44,104 L44,130"/><path class="b" d="M36,102 L66,86"/>
+      </g>
+      <g id="mola">
+        <text x="0" y="-84" text-anchor="middle">OH</text>
+        <text x="-4" y="88" text-anchor="middle">HN</text>
+        <text x="40" y="146" text-anchor="middle">O</text>
+        <circle class="dot" cx="66" cy="86" r="3"/>
+      </g>
+    </svg>
+    <div class="i-words" id="iwords"><span data-en="Pharmacy">داروسازی</span><span data-en="Sales &amp; marketing">فروش و بازاریابی</span><span data-en="Business coaching">کوچینگ کسب‌وکار</span><span data-en="Dr. Sina Dehghan">دکتر سینا دهقان</span></div>
+    <div class="i-bar"><i id="ibar"></i></div>
+    <div class="i-meta"><span id="ipct">۰</span>٪</div>
+  </div>
+  <button class="i-skip" type="button" id="iskip" data-en="Skip intro">رد کردن مقدمه</button>
+</div>
+
+<div class="prog" aria-hidden="true"><i id="prog"></i></div>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#home" aria-label="دکتر سینا دهقان، بازگشت به بالا" data-en-aria-label="Dr. Sina Dehghan, back to top">
+      <img class="logo-l" src="assets/img/logo-ochre.png" alt="" width="48" height="48">
+      <img class="logo-d" src="assets/img/logo-gold.png" alt="" width="48" height="48">
+      <span data-en="Dr. Sina Dehghan">دکتر سینا دهقان</span>
+    </a>
+    <ul class="links" id="links">
+      <li><a href="#home"><small>۰۱</small><span data-en="Home">خانه</span></a></li>
+      <li><a href="#about"><small>۰۲</small><span data-en="About">درباره</span></a></li>
+      <li><a href="#path"><small>۰۳</small><span data-en="Path">مسیر</span></a></li>
+      <li><a href="#projects"><small>۰۴</small><span data-en="Projects">پروژه‌ها</span></a></li>
+      <li><a href="#lab"><small>۰۵</small><span data-en="Beta panels">پنل‌های بتا</span><span class="beta-dot" aria-hidden="true"></span></a></li>
+      <li><a href="#gallery"><small>۰۶</small><span data-en="Activities">فعالیت‌ها</span></a></li>
+      <li><a href="#skills"><small>۰۷</small><span data-en="Skills">مهارت‌ها</span></a></li>
+      <li><a href="#contact"><small>۰۸</small><span data-en="Contact">تماس</span></a></li>
+    </ul>
+    <div class="nav-act">
+      <button class="ibtn lang" type="button" id="langBtn" aria-label="English version" data-en-aria-label="نسخه‌ی فارسی">EN</button>
+      <a class="pill" href="#docs" data-en="Resume PDF">رزومه PDF</a>
+      <button class="ibtn menu-btn" type="button" id="menuBtn" aria-label="باز کردن منو" aria-expanded="false" aria-controls="menu">
+        <svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M8 16h12"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="menuBg" aria-hidden="true"></div>
+<nav id="menu" aria-label="منوی سایت" data-en-aria-label="Site menu">
+  <ol id="menuList"></ol>
+  <div class="m-foot"><a class="pill" href="#docs" data-en="Resume PDF">رزومه PDF</a></div>
+</nav>
+
+<main id="main">
+<!-- 01 HERO -->
+<section class="hero" id="home" aria-label="معرفی" data-en-aria-label="Introduction">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <div>
+      <p class="h-name" data-hero data-en="Dr. Sina Dehghan">دکتر سینا دهقان</p>
+      <h1 class="h1" data-split="hero" data-en="Pharmacist">داروساز</h1>
+      <p class="h-sub" data-split="hero" data-en="Pharmaceutical market &amp; sales developer">توسعه‌دهنده‌ی بازار و فروش دارو</p>
+      <p class="h-lead" data-hero data-en="Over 10 years of experience in pharmacy, sales and education; Responsible Pharmacist at the Iranian Red Crescent pharmacy in Mashhad and business coach.">بیش از ۱۰ سال تجربه در داروسازی، فروش و آموزش؛ مسئول فنی داروخانه‌ی جمعیت هلال احمر مشهد و کوچ کسب‌وکار.</p>
+      <div class="h-cta" data-hero>
+        <a class="btn gold mag" href="#lab"><span data-en="Try the beta panels">امتحان پنل‌های بتا</span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+        <a class="btn ghost-inv mag" href="#projects" data-en="Projects">پروژه‌ها</a>
+      </div>
+    </div>
+    <div class="h-side">
+    <div class="h-photo" id="hphoto">
+      <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+        <defs><path id="circ" d="M100,100 m-92,0 a92,92 0 1,1 184,0 a92,92 0 1,1 -184,0"/></defs>
+        <text textLength="570" lengthAdjust="spacing"><textPath href="#circ" textLength="570" lengthAdjust="spacing">PHARM.D · SALES &amp; MARKETING · BUSINESS COACH · HEALTHTECH ·</textPath></text>
+      </svg>
+      <div class="orbit" aria-hidden="true"><i></i></div>
+      <div class="frame"><img src="assets/img/profile.jpg" alt="عکس پرسنلی دکتر سینا دهقان" data-en-alt="Portrait of Dr. Sina Dehghan" width="400" height="400"></div>
+    </div>
+    </div>
+  </div>
+  <div class="cue" aria-hidden="true"><span></span><b style="font-weight:400" data-en="Scroll">اسکرول</b></div>
+</section>
+
+<div class="mq" aria-hidden="true"><div class="mq-row" id="mq1"></div></div>
+
+<!-- 02 ABOUT -->
+<section class="sec" id="about" aria-labelledby="about-t">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="sh"><span class="sh-n">۰۲</span><span class="sh-l"></span><span data-en="About">درباره</span></div>
+        <h2 class="h2" id="about-t" data-split data-en="Pharmacist, market developer, <em>business consultant &amp; coach</em>">داروساز، توسعه‌دهنده‌ی بازار، <em>مشاور و کوچ</em> کسب‌وکار</h2>
+      </div>
+      <div>
+        <p class="about-txt" id="aboutTxt" data-en="Doctor of Pharmacy from Mashhad University of Medical Sciences, with over ten years of experience in the pharmacy profession and education. <mark>Responsible Pharmacist at the Iranian Red Crescent pharmacy in Mashhad</mark> and head of its compounding unit; founder and manager of a private pharmacy; <mark>business coach</mark> since 2025.">دکترای حرفه‌ای داروسازی از دانشگاه علوم پزشکی مشهد، با بیش از ده سال تجربه در حرفه داروسازی و آموزش. <mark>مسئول فنی داروخانه‌ی جمعیت هلال احمر مشهد</mark> و مسئول واحد ساخت داروهای ترکیبی؛ مؤسس و مدیر داروخانه‌ی شخصی؛ <mark>کوچ کسب‌وکار</mark> از سال ۱۴۰۴.</p>
+      </div>
+    </div>
+    <div class="nums">
+      <div class="num"><b><span data-count="10">۱۰</span><sup>+</sup></b><span data-en="Years of experience in pharmacy and education">سال تجربه در داروسازی و آموزش</span></div>
+      <div class="num"><b><span data-count="100">۱۰۰</span><sup>+</sup></b><span data-en="Hours of business coaching and talent assessment">ساعت کوچینگ کسب‌وکار و استعدادیابی</span></div>
+      <div class="num"><b><span data-count="1500">۱٬۵۰۰</span><sup>+</sup></b><span data-en="Students guided through education and counseling">داوطلب در مسیر آموزش و مشاوره</span></div>
+      <div class="num"><b><span data-count="5">۵</span></b><span data-en="Key projects in pharma, business and technology">پروژه‌ی شاخص در دارو، کسب‌وکار و فناوری</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 PATH -->
+<section class="path" id="path" aria-labelledby="path-t">
+  <div class="path-pin" id="pathPin">
+    <div class="wrap path-top">
+      <div>
+        <div class="sh"><span class="sh-n">۰۳</span><span class="sh-l"></span><span data-en="Career path">مسیر حرفه‌ای</span></div>
+        <h2 class="h2" id="path-t" data-split data-en="From education to <em>pharmacy</em>">از آموزش تا <em>داروسازی</em></h2>
+      </div>
+      <div class="path-meter" aria-hidden="true"><span><i id="pmeter"></i></span><b id="pnum">۰۱</b>/<b id="ptot" style="font-weight:400">۰۷</b></div>
+    </div>
+    <div class="track" id="track">
+      <article class="pc now"><span class="live" data-en="Now">اکنون</span><div class="yr" data-en="2024 – Present">۱۴۰۳ تا کنون</div><span class="tag" data-en="Professional experience">سابقه‌ی شغلی</span><h3 data-en="Responsible Pharmacist">مسئول فنی داروخانه</h3><p class="at" data-en="Iranian Red Crescent Society Pharmacy, Mashhad">داروخانه‌ی جمعیت هلال احمر ایران، مشهد</p><ul data-en="<li>Partnering with pharmaceutical distributors to expand pharmacy services</li><li>Developing services together with the Food and Drug Deputy</li><li>Running sales training sessions for staff</li>"><li>همکاری و توسعه‌ی خدمات داروخانه با شرکت‌های پخش</li><li>توسعه‌ی خدمات در همکاری با معاونت غذا و دارو</li><li>برگزاری جلسات آموزش فروش برای پرسنل</li></ul><span class="ix" aria-hidden="true">۰۱</span></article>
+      <article class="pc now"><span class="live" data-en="Now">اکنون</span><div class="yr" data-en="2024 – Present">۱۴۰۳ تا کنون</div><span class="tag" data-en="Professional experience">سابقه‌ی شغلی</span><h3 data-en="Head of the Compounding Unit">مسئول واحد ساخت داروهای ترکیبی</h3><p class="at" data-en="Red Crescent Pharmacy, Mashhad">داروخانه‌ی هلال احمر، مشهد</p><ul data-en="<li>Responsible for preparing and quality-controlling compounded medicines</li>"><li>مسئولیت ساخت و کنترل داروهای ترکیبی</li></ul><span class="ix" aria-hidden="true">۰۲</span></article>
+      <article class="pc now"><span class="live" data-en="Now">اکنون</span><div class="yr" data-en="2025 – Present">۱۴۰۴ تا کنون</div><span class="tag" data-en="Professional experience">سابقه‌ی شغلی</span><h3 data-en="Business Coach &amp; Development Consultant">کوچ و مشاور توسعه‌ی کسب‌وکار</h3><p class="at" data-en="Helping individuals and business owners clarify goals and take practical steps">همراهی افراد و صاحبان کسب‌وکار در روشن کردن هدف و برداشتن گام‌های عملی</p><ul data-en="<li>100+ hours of business coaching and career talent assessment</li><li>Level 1 Coach, FaraCoach (ICF-accredited)</li><li>Level 2 coaching student, TimeCoach Institute</li>"><li>بیش از ۱۰۰ ساعت جلسات کوچینگ کسب‌وکار و استعدادیابی شغلی</li><li>کوچ سطح یک فراکوچ، مورد تأیید <span class="ltr">ICF</span></li><li>دانشجوی کوچ سطح دو، مؤسسه تایم‌کوچ</li></ul><span class="ix" aria-hidden="true">۰۳</span></article>
+      <article class="pc"><div class="yr" data-en="2020 – 2024">۱۳۹۹–۱۴۰۳</div><span class="tag" data-en="Professional experience">سابقه‌ی شغلی</span><h3 data-en="Founder &amp; Manager, Pharmacy">مؤسس و مدیر داروخانه</h3><p class="at" data-en="Dr. Dehghan Pharmacy">داروخانه‌ی دکتر دهقان</p><ul data-en="<li>Founded and ran the pharmacy, from launch to managing services, inventory and staff</li>"><li>تأسیس و اداره‌ی داروخانه، از راه‌اندازی تا مدیریت خدمات، موجودی و پرسنل</li></ul><span class="ix" aria-hidden="true">۰۴</span></article>
+      <article class="pc"><div class="yr" data-en="2020">۱۳۹۹</div><span class="tag edu" data-en="Education">تحصیلات</span><h3 data-en="Business Administration (MBA)">مدیریت کسب‌وکار (<span class="ltr">MBA</span>)</h3><p class="at" data-en="Mahan Institute, Tehran">مؤسسه ماهان، تهران</p><ul data-en="<li>Plus a certificate in economic and investment consulting</li>"><li>به‌همراه گواهی مشاوره‌ی اقتصادی و سرمایه‌گذاری</li></ul><span class="ix" aria-hidden="true">۰۵</span></article>
+      <article class="pc"><div class="yr" data-en="2011 – 2017">۱۳۹۰–۱۳۹۶</div><span class="tag edu" data-en="Education">تحصیلات</span><h3 data-en="Doctor of Pharmacy (Pharm.D)">دکترای حرفه‌ای داروسازی</h3><p class="at" data-en="Mashhad University of Medical Sciences">دانشگاه علوم پزشکی مشهد</p><ul data-en="<li>Graduated as a Doctor of Pharmacy</li>"><li>دانش‌آموخته‌ی دکترای حرفه‌ای داروسازی (<span class="ltr">Pharm.D</span>)</li></ul><span class="ix" aria-hidden="true">۰۶</span></article>
+      <article class="pc"><div class="yr" data-en="2011 – 2016">۱۳۹۰–۱۳۹۵</div><span class="tag" data-en="Professional experience">سابقه‌ی شغلی</span><h3 data-en="Entrance Exam Instructor &amp; Counselor">مدرس و مشاور کنکور</h3><p class="at" data-en="Mashhad, Ahvaz and Jahrom">مشهد، اهواز و جهرم</p><ul data-en="<li>Taught and counseled 1,500+ university entrance exam candidates</li>"><li>آموزش و مشاوره‌ی بیش از ۱۵۰۰ داوطلب کنکور</li></ul><span class="ix" aria-hidden="true">۰۷</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- 04 PROJECTS -->
+<section class="sec" id="projects" aria-labelledby="proj-t">
+  <div class="wrap">
+    <div class="sh"><span class="sh-n">۰۴</span><span class="sh-l"></span><span data-en="Key projects">پروژه‌های شاخص</span></div>
+    <h2 class="h2" id="proj-t" data-split data-en="Four <em>real</em> problems, four solutions">چهار مسئله‌ی <em>واقعی</em>، چهار راه‌حل</h2>
+    <div class="stack" id="stack">
+      <article class="pj">
+        <div class="pj-media wide"><img src="assets/img/project-sma.jpg" alt="داروهای ریسیپر و اورلیژن برای بیماران SMA" data-en-alt="Risiper and Everligen medicines for SMA patients" loading="lazy"></div>
+        <div class="pj-body">
+          <div class="pj-top"><b>۰۱</b><span data-en="Medicine &amp; patients">دارو و بیمار</span></div>
+          <div class="pj-main">
+            <h3 data-en="Sourcing and launching SMA medication">تأمین و لانچ داروی بیماران <span class="ltr">SMA</span></h3>
+            <p data-en="Sourcing and distributing medication for patients with SMA (spinal muscular atrophy) in Khorasan, alongside occupational therapy services at the Red Crescent pharmacy in Mashhad.">تهیه و توزیع داروی بیماران <span class="ltr">SMA</span> در خراسان، همراه با خدمات کاردرمانی در داروخانه‌ی هلال احمر مشهد.</p>
+          </div>
+          <div class="pj-aside"><ul data-en="<li>Collaboration with Dr. Beyraghi and Dr. Akhoundian</li><li>Collaboration with Pursina and Ronak pharmaceutical companies</li><li>Occupational therapy offered alongside medication delivery</li>"><li>همکاری با دکتر بیرقی و دکتر آخوندیان</li><li>همکاری با شرکت‌های داروسازی پورسینا و روناک</li><li>ارائه‌ی کاردرمانی در کنار تحویل دارو</li></ul></div>
+          <div class="role-l"><span data-en="Role: <b>Supplier &amp; distributor</b> | 2025">نقش: <b>تأمین و توزیع‌کننده</b> | ۱۴۰۴</span><span class="pj-acts"><button class="btn ink sm" type="button" data-gal="sma"><span data-en="View photos">دیدن تصاویر</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><a class="btn line sm" href="#gallery" data-vid data-en="Watch video">تماشای ویدیو</a></span></div>
+        </div>
+      </article>
+      <article class="pj">
+        <div class="pj-media fit wide"><img src="assets/img/project-proposal.jpg" alt="جلد پروپوزال بیزینس کوچینگ فروش و بازاریابی" data-en-alt="Cover of the sales and marketing business coaching proposal" loading="lazy"></div>
+        <div class="pj-body">
+          <div class="pj-top"><b>۰۲</b><span data-en="Sales &amp; marketing">فروش و بازاریابی</span></div>
+          <div class="pj-main">
+            <h3 data-en="Business coaching proposal for sales and marketing">پروپوزال بیزینس کوچینگ فروش و بازاریابی</h3>
+            <p data-en="A one-year, four-phase plan to improve the sales, marketing and brand of Risiper at Pursina Pharmaceutical Group.">برنامه‌ی یک‌ساله و چهارفازی برای بهبود فروش، بازاریابی و برند داروی ریسیپر در گروه داروسازی پورسینا.</p>
+            <ul data-en="<li>Steady growth in prescriptions and revenue at a high profit margin</li><li>Market and competitor analysis, branding and sales systems</li>"><li>افزایش پایدار نسخه‌ها و رشد درآمد با حاشیه‌ی سود بالا</li><li>تحلیل بازار و رقبا، برندینگ و سیستم‌سازی فروش</li></ul>
+          </div>
+          <div class="pj-aside">
+            <div class="res" id="res">
+              <div class="big"><span id="resN">۲۰۰</span><small data-en="units sold per month">عدد فروش در ماه</small></div>
+              <div class="bars">
+                <div class="bar"><b data-en="Start">ابتدا</b><span><i id="b0" style="transform:scaleX(.025)"></i></span></div>
+                <div class="bar"><b data-en="Now">اکنون</b><span><i id="b1"></i></span></div>
+                <span data-en="Risiper sales grew from 5 units at the start to 200 units per month">فروش ریسیپر از ۵ عدد در ابتدا به ۲۰۰ عدد در ماه</span>
+              </div>
+            </div>
+          </div>
+          <div class="role-l"><span data-en="Role: <b>Business coaching team member</b> | 2025">نقش: <b>عضو تیم بیزینس کوچینگ</b> | ۱۴۰۴</span></div>
+        </div>
+      </article>
+      <article class="pj">
+        <div class="pj-media shot1"><img src="assets/img/card-kasri.jpg" alt="نمای اولیه‌ی دفتر کسری هوشمند" data-en-alt="First screen of the smart shortage log" loading="lazy"></div>
+        <div class="pj-body">
+          <div class="pj-top"><b>۰۳</b><span data-en="Pharmacy digitization">دیجیتال‌سازی داروخانه</span></div>
+          <div class="pj-main">
+            <h3 data-en="Smart shortage log for the Red Crescent pharmacy">دفتر کسری هوشمند داروخانه هلال احمر</h3>
+            <p data-en="A digital system for logging shortages, ordering and approving items at the Iranian Red Crescent pharmacy in Mashhad, replacing the paper log and order form.">سامانه‌ی دیجیتال ثبت کسری، سفارش و تأیید اقلام در داروخانه‌ی جمعیت هلال احمر مشهد؛ جایگزین دفتر و فرم کاغذی سفارش.</p>
+          </div>
+          <div class="pj-aside"><ul data-en="<li>Three-step workflow: staff, orderer, responsible pharmacist</li><li>Order output per supplier with item-by-item approval</li><li>Stock coverage and expiry alerts, reports and archive</li>"><li>گردش کار سه‌مرحله‌ای: پرسنل، سفارش‌دهنده، مسئول فنی</li><li>خروجی سفارش برای هر شرکت با تأیید قلم‌به‌قلم</li><li>هشدار پوشش موجودی و انقضا، گزارش و بایگانی</li></ul></div>
+          <div class="role-l"><span data-en="Role: <b>Compiler &amp; presenter</b> | 2026">نقش: <b>گردآورنده و ارائه‌دهنده</b> | ۱۴۰۵</span><a class="btn ink sm" href="#lab" data-open-lab="kasri"><span data-en="Try the beta">اجرای نسخه‌ی بتا</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a></div>
+        </div>
+      </article>
+      <article class="pj">
+        <div class="pj-media shot1"><img src="assets/img/card-ei.jpg" alt="نمای اولیه‌ی پنل هوش هیجانی" data-en-alt="First screen of the emotional intelligence panel" loading="lazy"></div>
+        <div class="pj-body">
+          <div class="pj-top"><b>۰۴</b><span data-en="Emotional intelligence &amp; business">هوش هیجانی و کسب‌وکار</span></div>
+          <div class="pj-main">
+            <h3 data-en="Emotional intelligence panel for business owners">پنل هوش هیجانی ویژه‌ی صاحبان کسب‌وکار</h3>
+            <p data-en="A two-part tool for daily emotion logging and for practicing emotional intelligence skills.">ابزاری دوبخشی برای ثبت روزانه‌ی هیجان‌ها و تمرین مهارت‌های هوش هیجانی.</p>
+          </div>
+          <div class="pj-aside"><ul data-en="<li>Emotion logging in structured cognitive-behavioral steps</li><li>Daily, weekly and monthly review</li><li>Moving entries to the practice sheet to uncover patterns</li>"><li>ثبت هیجان در گام‌های ساختارمند شناختی‌رفتاری</li><li>مرور روزانه، هفتگی و ماهانه</li><li>انتقال ثبت‌ها به برگه‌ی تمرین برای کشف الگوها</li></ul></div>
+          <div class="role-l"><span data-en="Role: <b>Compiler &amp; presenter</b> | 2026">نقش: <b>گردآورنده و ارائه‌دهنده</b> | ۱۴۰۵</span><a class="btn ink sm" href="#lab" data-open-lab="ei"><span data-en="Try the beta">اجرای نسخه‌ی بتا</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="sec book" id="book" aria-labelledby="book-t">
+  <div class="wrap book-in">
+    <div class="cover-wrap" id="coverWrap">
+      <div class="cover" id="cover">
+        <img src="assets/img/book-cover.jpg" alt="جلد کتاب هوش هیجانی در عصر هوش مصنوعی، ویژه‌ی صاحبان کسب‌وکار" data-en-alt="Cover of the book Emotional Intelligence in the Age of AI, for business owners" loading="lazy">
+        <div class="stamp" id="stamp" data-en="In<br>press">در دست<br>چاپ</div>
+      </div>
+    </div>
+    <div>
+      <div class="sh"><span class="sh-n">۰۴</span><span class="sh-l"></span><span data-en="Featured project: book">پروژه‌ی ویژه: کتاب</span></div>
+      <h2 class="h2" id="book-t" data-split data-en="Emotional Intelligence in the Age of AI">هوش هیجانی در عصر هوش مصنوعی</h2>
+      <div class="by" data-en="For business owners | Role: Author">ویژه‌ی صاحبان کسب‌وکار | نقش: نویسنده</div>
+      <p data-rise data-en="In the age of AI, the link between technology and human emotional capabilities matters more than ever; this book explores the role of emotional intelligence in work and leadership.">در عصر هوش مصنوعی، پیوند فناوری با قابلیت‌های هیجانی انسان اهمیتی روزافزون یافته است؛ این کتاب نقش هوش هیجانی را در کار و رهبری بررسی می‌کند.</p>
+      <ul data-rise data-en="<li>How emotional intelligence relates to job well-being when people and AI work together</li><li>Recognizing and regulating emotions while using technology critically</li><li>Better interactions, professional adaptability and human performance</li>"><li>ارتباط هوش هیجانی با بهزیستی شغلی در همکاری انسان و هوش مصنوعی</li><li>شناخت و تنظیم هیجان‌ها، در کنار بهره‌گیری نقادانه از فناوری</li><li>ارتقای کیفیت تعاملات، سازگاری حرفه‌ای و عملکرد انسانی</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- 05 LAB -->
+<section class="sec" id="lab" aria-labelledby="lab-t">
+  <div class="wrap">
+    <div class="lab-head">
+      <div>
+        <div class="sh"><span class="sh-n">۰۵</span><span class="sh-l"></span><span data-en="Interactive panels">پنل‌های تعاملی</span><span class="beta">BETA</span></div>
+        <h2 class="h2" id="lab-t" data-split data-en="Try them <em>right here</em>">همین‌جا <em>امتحان</em> کنید</h2>
+        <p class="lead" data-en="Two tools built for the pharmacy and for coaching run here as beta versions. Start with sample data or from scratch. The panels themselves are in Persian.">دو ابزاری که برای داروخانه و کوچینگ ساخته شده‌اند، به‌صورت نسخه‌ی بتا روی همین صفحه اجرا می‌شوند. با داده‌ی نمونه شروع کنید یا از صفر بنویسید.</p>
+      </div>
+    </div>
+    <div class="lab-tabs" role="tablist" aria-label="انتخاب پنل" data-en-aria-label="Choose a panel">
+      <button class="lab-tab" role="tab" id="tab-kasri" aria-controls="device" aria-selected="true" data-panel="kasri">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span>
+        <span data-en="<b>Smart shortage log</b><small>Shortage logging, ordering and pharmacist approval</small>"><b>دفتر کسری هوشمند</b><small>ثبت کسری، سفارش و تأیید مسئول فنی</small></span>
+      </button>
+      <button class="lab-tab" role="tab" id="tab-ei" aria-controls="device" aria-selected="false" data-panel="ei" tabindex="-1">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></span>
+        <span data-en="<b>Emotional intelligence panel</b><small>Five practice sections, analysis and guided breathing</small>"><b>پنل هوش هیجانی</b><small>پنج بخش تمرین، تحلیل و تنفس هدایت‌شده</small></span>
+      </button>
+    </div>
+    <div class="lab-grid">
+      <div class="device" id="device" role="tabpanel" aria-labelledby="tab-kasri">
+        <div class="dbar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="urlTxt">dr-sina-dehghan / beta / kasri</span></span>
+          <span class="dacts">
+            <button class="ibtn" type="button" id="maxBtn" aria-label="بزرگ‌نمایی پنل" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+          </span>
+        </div>
+        <div class="screen" id="screen">
+          <div class="poster" id="poster">
+            <img id="posterImg" src="assets/img/project-kasri.jpg" alt="" loading="lazy">
+            <h3 id="posterT">دفتر کسری هوشمند</h3>
+            <p id="posterP">نسخه‌ی کامل پنل با داده‌های نمونه‌ی ساختگی بارگذاری می‌شود.</p>
+            <button class="use" type="button" id="useBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4.1 12 6"/><path d="m5.1 8-2.9-.8"/><path d="m6 12-1.9 2"/><path d="M7.2 2.2 8 5.1"/><path d="M9.04 9.69a.5.5 0 0 1 .65-.65l11 4.5a.5.5 0 0 1-.07.95l-4.35 1.04a1 1 0 0 0-.74.74l-1.04 4.35a.5.5 0 0 1-.95.07z"/></svg><span data-en="Open and use the panel">ورود و استفاده از پنل</span></button>
+            <span class="use-hint" data-en="Runs right here on this page">همین‌جا روی همین صفحه اجرا می‌شود</span>
+          </div>
+        </div>
+      </div>
+      <aside class="side">
+        <div class="card">
+          <h4 data-en="What to try">چه چیزی را امتحان کنید؟</h4>
+          <ol id="tryList"></ol>
+        </div>
+        <div class="card">
+          <h4 data-en="About the beta">درباره‌ی نسخه‌ی بتا</h4>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-en="Data stays only in this device's browser and is never sent anywhere.">داده‌ها فقط در مرورگر همین دستگاه ذخیره می‌شود و برای کسی ارسال نمی‌شود.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg><span data-en="Names and items in the sample are fictional. Use the enlarge button to view the panel larger on this page.">نام‌ها و اقلام نمونه ساختگی‌اند. برای دید بهتر، با دکمه‌ی بزرگ‌نمایی پنل را در همین صفحه بزرگ کنید.</span></li>
+          </ul>
+          <div class="resets">
+            <button class="btn line sm" type="button" id="seedBtn" data-en="Restore sample data">بازگرداندن داده‌ی نمونه</button>
+            <button class="btn line sm" type="button" id="emptyBtn" data-en="Start from scratch">شروع از صفر</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 06 GALLERY -->
+<section class="sec" id="gallery" aria-labelledby="gal-t" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="gal-top">
+      <div>
+        <div class="sh"><span class="sh-n">۰۶</span><span class="sh-l"></span><span data-en="Activities &amp; collaborations">فعالیت‌ها و همکاری‌ها</span></div>
+        <h2 class="h2" id="gal-t" data-split data-en="Stories of collaboration, education &amp; <em>pharma services</em>">روایت‌هایی از همکاری، آموزش و <em>خدمات دارویی</em></h2>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="دسته‌بندی تصاویر" data-en-aria-label="Photo categories"></div>
+    </div>
+    <figure class="vid" id="vid">
+      <div class="vid-box"><video id="smaVid" controls playsinline preload="metadata" poster="assets/video/sma-poster.jpg"><source src="assets/video/sma-redcrescent.mp4" type="video/mp4"></video></div>
+      <figcaption data-en='<span class="vtag">Video | SMA medication</span><b>Innovation in care, access at the Red Crescent</b><span>Preparing and distributing medication for patients with spinal muscular atrophy at the Iranian Red Crescent pharmacy in Mashhad, together with occupational therapy and Red Crescent volunteers.</span>'><span class="vtag">ویدیو | داروی بیماران <span class="ltr">SMA</span></span><b>نوآوری در درمان، دسترسی در هلال احمر</b><span>تهیه و توزیع داروی بیماران آتروفی عضلانی نخاعی در داروخانه‌ی جمعیت هلال احمر مشهد، همراه با کاردرمانی و همکاری داوطلبان هلال احمر.</span></figcaption>
+    </figure>
+    <div class="gal" id="gal"></div>
+    <p class="gcount" id="gcount"></p>
+  </div>
+</section>
+
+<!-- 07 SKILLS + DOCS -->
+<section class="sec" id="skills" aria-labelledby="sk-t">
+  <div class="wrap">
+    <div class="sh"><span class="sh-n">۰۷</span><span class="sh-l"></span><span data-en="Skills &amp; credentials">مهارت‌ها و مدارک</span></div>
+    <h2 class="h2" id="sk-t" data-split data-en="Where pharmacy meets <em>business</em>">جایی که دارو و <em>کسب‌وکار</em> به هم می‌رسند</h2>
+    <div class="sk">
+      <div data-rise><span class="k">۰۱</span><h3 data-en="Pharmacy &amp; technical">داروسازی و امور فنی</h3><ul data-en="<li>Responsible pharmacist role and pharmacy management</li><li>Compounding medicines</li><li>TTAC (track &amp; trace) system and Food &amp; Drug requirements</li><li>Inventory, ordering and drug supply management</li>"><li>مسئولیت فنی و مدیریت داروخانه</li><li>ساخت داروهای ترکیبی</li><li>سامانه‌ی تی‌تک و الزامات غذا و دارو</li><li>مدیریت موجودی، سفارش و تأمین دارو</li></ul></div>
+      <div data-rise><span class="k">۰۲</span><h3 data-en="Pharmaceutical sales &amp; marketing">فروش و بازاریابی دارویی</h3><ul data-en="<li>Pharmaceutical sales and marketing strategy</li><li>Relationships with distributors and pharmaceutical companies</li><li>Branding and digital marketing</li><li>Business coaching and proposal writing</li>"><li>استراتژی فروش و بازاریابی دارویی</li><li>ارتباط با شرکت‌های پخش و داروسازی</li><li>برندینگ و بازاریابی دیجیتال</li><li>بیزینس کوچینگ و تدوین پروپوزال</li></ul></div>
+      <div data-rise><span class="k">۰۳</span><h3 data-en="Tools, leadership &amp; training">ابزار، رهبری و آموزش</h3><ul data-en="<li>Excel and sales data reporting</li><li>Digitizing and systematizing processes</li><li>Sales and organizational emotional intelligence training</li><li>English, upper-intermediate</li>"><li>اکسل و گزارش‌گیری داده‌های فروش</li><li>دیجیتال‌سازی و سیستم‌سازی فرایندها</li><li>آموزش فروش و هوش هیجانی سازمانی</li><li>زبان انگلیسی، بالاتر از متوسط</li></ul></div>
+    </div>
+
+    <div class="docs" id="docs">
+      <div class="doc" data-rise><button type="button" data-doc="0" aria-label="نمایش گواهی: کوچ سطح یک ICF" data-en-aria-label="View certificate: Level 1 Coach (ICF Level 1)"><img src="assets/docs/cert-faracoach.jpg" alt="گواهی کوچ سطح یک مؤسسه فراکوچ" data-en-alt="FaraCoach Level 1 coach certificate" loading="lazy"></button><div data-en="<h3>Level 1 Coach (ICF Level 1)</h3><p>FaraCoach International Institute | 84 hours</p>"><h3>کوچ سطح یک، مورد تأیید <span class="ltr">ICF</span></h3><p>مؤسسه بین‌المللی فراکوچ | ۸۴ ساعت</p></div></div>
+      <div class="doc" data-rise><button type="button" data-doc="1" aria-label="نمایش گواهی: مدرس رسمی DISC" data-en-aria-label="View certificate: Certified DISC Trainer"><img src="assets/docs/cert-disc.jpg" alt="گواهی مدرس DISC کلینیک استعدادیابی و کسب‌وکار سینا" data-en-alt="Certified DISC trainer certificate, Sina Talent and Business Clinic" loading="lazy"></button><div data-en="<h3>Certified DISC Trainer</h3><p>Sina Talent &amp; Business Clinic | 32 hours, 2024</p>"><h3>مدرس رسمی <span class="ltr">DISC</span></h3><p>کلینیک استعدادیابی و کسب‌وکار سینا | ۳۲ ساعت، ۱۴۰۳</p></div></div>
+      <div class="doc" data-rise><button type="button" data-doc="2" aria-label="نمایش گواهی: تحلیل شایستگی روان‌شناختی منابع انسانی" data-en-aria-label="View certificate: HR Psychological Competency Analysis"><img src="assets/docs/cert-hr.jpg" alt="گواهی تحلیل شایستگی روان‌شناختی منابع انسانی" data-en-alt="Human resources psychological competency analysis certificate" loading="lazy"></button><div data-en="<h3>HR Psychological Competency Analysis</h3><p>Sina Talent &amp; Business Clinic | 16 hours, 2025</p>"><h3>تحلیل شایستگی روان‌شناختی منابع انسانی</h3><p>کلینیک استعدادیابی و کسب‌وکار سینا | ۱۶ ساعت، ۱۴۰۴</p></div></div>
+      <div class="doc" data-rise><button type="button" data-doc="3" aria-label="نمایش گواهی: مشاور حرفه‌ای مدیریت کسب‌وکار" data-en-aria-label="View certificate: Professional Business Management Consultant"><img src="assets/docs/cert-mahan-fa.jpg" alt="گواهینامه‌ی مشاور حرفه‌ای مدیریت کسب‌وکار، مؤسسه آموزش عالی آزاد ماهان" data-en-alt="Professional business management consultant certificate, Mahan Institute" loading="lazy"></button><div data-en="<h3>Professional Business Management Consultant</h3><p>Mahan Higher Education Institute | 110 hours, 2021</p>"><h3>مشاور حرفه‌ای مدیریت کسب‌وکار</h3><p>مؤسسه آموزش عالی آزاد ماهان | ۱۱۰ ساعت، ۱۴۰۰</p></div></div>
+      <div class="doc" data-rise><button type="button" data-doc="4" aria-label="نمایش گواهی: مشاوره‌ی اقتصادی و سرمایه‌گذاری" data-en-aria-label="View certificate: Economic &amp; Investment Consultancy"><img src="assets/docs/cert-mahan.jpg" alt="گواهی مشاوره‌ی اقتصادی و سرمایه‌گذاری مدرسه‌ی کسب‌وکار ماهان" data-en-alt="Mahan Business School economic and investment consultancy certificate" loading="lazy"></button><div data-en="<h3>Economic &amp; Investment Consultancy</h3><p>Mahan Business School, Tehran</p>"><h3>مشاوره‌ی اقتصادی و سرمایه‌گذاری</h3><p>مدرسه‌ی کسب‌وکار ماهان، تهران</p></div></div>
+      <div class="doc" data-rise><button type="button" class="rthumb" id="pdfOpen" aria-label="باز کردن رزومه" data-en-aria-label="Open the resume"><img src="assets/docs/resume-thumb.jpg" data-en-src="assets/docs/resume-en-thumb.jpg" alt="صفحه‌ی اول رزومه‌ی دکتر سینا دهقان" data-en-alt="First page of Dr. Sina Dehghan's resume" loading="lazy"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b style="font-weight:700" data-en="View resume">مشاهده‌ی رزومه</b></span></button><div data-en="<h3>Resume (PDF)</h3><p>Two-page English version, view, print or download</p>"><h3>رزومه (<span class="ltr">PDF</span>)</h3><p>نسخه‌ی فارسی دوصفحه‌ای، قابل مشاهده، چاپ و دانلود</p></div></div>
+    </div>
+    <ul class="courses" data-rise data-en="<li><b>Level 2 coaching student</b> | TimeCoach Institute</li><li><b>Level 1 Coach</b> | FaraCoach Institute, Mashhad</li><li><b>DISC behavioral model and organizational coaching</b> | Estedad Sina Institute</li><li><b>Economic consulting certificate</b> | Mahan Management Consulting</li><li><b>Emotional intelligence for leadership</b> | Estedad Sina Institute</li><li><b>Career and academic talent assessment</b> | Estedad Sina Institute</li><li><b>HR psychological competency analysis</b> | Sina Talent &amp; Business Clinic</li><li><b>Mindfulness course</b> | FaraCoach Institute, Mashhad</li><li><b>Choice theory course</b> | FaraCoach Institute, Mashhad</li><li><b>Bodybuilding coaching</b> | Bodybuilding &amp; Fitness Federation</li><li><b>Training and nutrition programming</b> | European Nutrition Institute</li>">
+      <li><b>دانشجوی کوچ سطح دو</b> | مؤسسه تایم‌کوچ</li>
+      <li><b>کوچ سطح یک</b> | مؤسسه فراکوچ، مشهد</li>
+      <li><b>آموزش مدل رفتاری <span class="ltr">DISC</span> و کوچینگ سازمانی</b> | مؤسسه استعداد سینا</li>
+      <li><b>گواهی مشاوره‌ی اقتصادی</b> | مؤسسه مشاوره مدیریت ماهان</li>
+      <li><b>هوش هیجانی برای رهبری</b> | مؤسسه استعداد سینا</li>
+      <li><b>سنجش استعداد شغلی و تحصیلی</b> | مؤسسه استعداد سینا</li>
+      <li><b>تحلیل شایستگی روان‌شناختی منابع انسانی</b> | کلینیک استعدادیابی و کسب‌وکار سینا</li>
+      <li><b>دوره‌ی ذهن‌آگاهی</b> | مؤسسه فراکوچ، مشهد</li>
+      <li><b>دوره‌ی تئوری انتخاب</b> | مؤسسه فراکوچ، مشهد</li>
+      <li><b>مربیگری بدنسازی</b> | فدراسیون بدنسازی و پرورش اندام</li>
+      <li><b>برنامه‌نویسی تمرین و تغذیه</b> | انستیتو تغذیه اروپا</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 08 CONTACT -->
+<section class="sec contact" id="contact" aria-labelledby="c-t">
+  <div class="wrap">
+    <div class="sh"><span class="sh-n">۰۸</span><span class="sh-l"></span><span data-en="Contact">تماس</span></div>
+    <h2 class="big-cta" id="c-t" data-split data-en='Let&#39;s <span class="hl">talk</span>.'>بیایید <span class="hl">گفت‌وگو</span> کنیم.</h2>
+    <div class="c-rows">
+      <div class="c-row" data-rise><small data-en="Email">ایمیل</small><span class="v ltr">drsinadehghan.businesscoach@gmail.com</span><div class="act"><button class="btn sm" type="button" data-copy="drsinadehghan.businesscoach@gmail.com" data-en="Copy">کپی</button><a class="btn sm" href="mailto:drsinadehghan.businesscoach@gmail.com" data-en="Email">ایمیل</a></div></div>
+      <div class="c-row" data-rise><small data-en="Instagram">اینستاگرام</small><span class="v ltr">@dr.sina.dehghan_pharmacist</span><div class="act"><a class="btn sm" href="https://www.instagram.com/dr.sina.dehghan_pharmacist/" target="_blank" rel="noopener" data-en="Open">باز کردن</a></div></div>
+      <div class="c-row" data-rise><small data-en="Phone">تلفن</small><span class="v ltr" data-en="+98 915 326 3479">۰۹۱۵ ۳۲۶ ۳۴۷۹</span><div class="act"><button class="btn sm" type="button" data-copy="09153263479" data-en="Copy">کپی</button><a class="btn sm" href="tel:+989153263479" data-en="Call">تماس</a></div></div>
+    </div>
+    <div class="foot"><span data-en="© Dr. Sina Dehghan | Mashhad, Iran">© دکتر سینا دهقان | مشهد، ایران</span><a href="#home" data-en="Back to top">بازگشت به بالا</a></div>
+  </div>
+</section>
+</main>
+
+<dialog id="lb" aria-label="نمایش تصویر" data-en-aria-label="Image viewer">
+  <img id="lbImg" alt="">
+  <div class="cap"><span id="lbCap"></span><div class="nv">
+    <button class="ibtn" type="button" id="lbPrev" aria-label="تصویر قبلی" data-en-aria-label="Previous image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    <button class="ibtn" type="button" id="lbNext" aria-label="تصویر بعدی" data-en-aria-label="Next image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <button class="ibtn" type="button" id="lbClose" aria-label="بستن" data-en-aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div></div>
+</dialog>
+
+<dialog id="pdfv" aria-label="رزومه" data-en-aria-label="Resume">
+  <div class="pdf-h">
+    <b data-en="Dr. Sina Dehghan — Resume">رزومه‌ی دکتر سینا دهقان</b>
+    <button class="btn line sm" type="button" id="pdfPrint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg><span data-en="Print">چاپ</span></button>
+    <a class="btn ink sm" href="assets/docs/Sina-Dehghan-Resume-FA.pdf" data-en-href="assets/docs/Sina-Dehghan-Resume-EN.pdf" download="Sina-Dehghan-Resume-FA.pdf" data-en-download="Sina-Dehghan-Resume-EN.pdf" id="pdfDl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-en="Download PDF">دانلود PDF</span></a>
+    <button class="ibtn" type="button" id="pdfClose" aria-label="بستن" data-en-aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="pdf-b">
+    <img src="assets/docs/resume-p1.jpg" data-en-src="assets/docs/resume-en-p1.jpg" alt="رزومه، صفحه‌ی ۱" data-en-alt="Resume, page 1" loading="lazy" width="1588" height="2246">
+    <img src="assets/docs/resume-p2.jpg" data-en-src="assets/docs/resume-en-p2.jpg" alt="رزومه، صفحه‌ی ۲" data-en-alt="Resume, page 2" loading="lazy" width="1588" height="2246">
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* intro gate runs before libraries load */
+(function(){
+  var rm=false; try{ rm=matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+  if(!rm){ document.documentElement.classList.add('has-intro','lock'); }
+  window.__RM=rm;
+  window.__killIntro=function(){ document.documentElement.classList.remove('has-intro','lock'); };
+  setTimeout(function(){ if(!window.__introDone) window.__killIntro(); },9000);
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+"use strict";
+var $=function(s,r){return (r||document).querySelector(s);}, $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s));};
+var RM=window.__RM, G=window.gsap, ST=window.ScrollTrigger;
+var HAS=!!(G&&ST);
+var fine=false; try{ fine=matchMedia('(pointer:fine)').matches; }catch(e){}
+var root=document.documentElement;
+
+/* ---------- language ---------- */
+var LANG='fa';
+try{ if(localStorage.getItem('sd-lang')==='en') LANG='en'; }catch(e){}
+var T=function(fa,en){ return LANG==='en'?en:fa; };
+var num=function(n){ return Number(n).toLocaleString(LANG==='en'?'en-US':'fa-IR'); };
+var FAD='۰۱۲۳۴۵۶۷۸۹';
+var toLang=function(s){ s=String(s); return LANG==='en'? s.replace(/[۰-۹]/g,function(c){return FAD.indexOf(c);}) : s.replace(/[0-9]/g,function(d){return FAD[d];}); };
+var n2=function(n){ return toLang(String(n).padStart(2,'0')); };
+var I18N=$$('[data-en]').map(function(el){ return {el:el,fa:el.innerHTML,en:el.getAttribute('data-en')}; });
+var I18A=[]; $$('*').forEach(function(el){ [].slice.call(el.attributes).forEach(function(a){ if(a.name.indexOf('data-en-')===0){ var n=a.name.slice(8); I18A.push({el:el,n:n,fa:el.getAttribute(n)||'',en:a.value}); } }); });
+var DG='.sh-n,.ix,.pj-top b,.sk .k,#links small,#pnum,#ptot';
+function applyLang(){
+  root.lang=LANG; root.dir=LANG==='en'?'ltr':'rtl';
+  document.title=T('دکتر سینا دهقان','Dr. Sina Dehghan');
+  I18N.forEach(function(x){ x.el.innerHTML=LANG==='en'?x.en:x.fa; });
+  I18A.forEach(function(x){ x.el.setAttribute(x.n,LANG==='en'?x.en:x.fa); });
+  $$(DG).forEach(function(el){ el.textContent=toLang(el.textContent); });
+  var lb=$('#langBtn'); lb.textContent=T('EN','فا');
+  $('#menuBtn').setAttribute('aria-label',T('باز کردن منو','Open menu'));
+  $('#maxBtn').setAttribute('aria-label',T('بزرگ‌نمایی پنل','Enlarge panel'));
+  buildMenu(); buildFilters(); renderGal(galKey,true); labTexts(); slidesLang(); buildMarquee();
+  $$('[data-count]').forEach(function(el){ el.textContent=num(el.getAttribute('data-count')); });
+  $('#resN').textContent=num(200);
+  $('#i-found').textContent=num(0); $('#ipct').textContent=num(0);
+}
+
+/* light theme only */
+root.setAttribute('data-theme','light');
+
+/* ---------- toast ---------- */
+var tt; function toast(m){ var t=$('#toast'); t.textContent=m; t.classList.add('show'); clearTimeout(tt); tt=setTimeout(function(){t.classList.remove('show');},2600); }
+
+/* ---------- copy ---------- */
+$$('[data-copy]').forEach(function(b){ b.addEventListener('click',function(){
+  var v=b.getAttribute('data-copy');
+  function ok(){ toast(T('کپی شد','Copied')); }
+  function fb(){ var ta=document.createElement('textarea'); ta.value=v; ta.style.cssText='position:fixed;opacity:0'; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); ok(); }catch(e){ toast(v); } ta.remove(); }
+  try{ if(navigator.clipboard&&window.isSecureContext) navigator.clipboard.writeText(v).then(ok,fb); else fb(); }catch(e){ fb(); }
+});});
+
+/* ---------- smooth anchors (CSS smooth scrolling breaks ScrollTrigger measuring) ---------- */
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href^="#"]'); if(!a) return; var id=a.getAttribute('href').slice(1); var el=id?document.getElementById(id):null; if(!el) return;
+  e.preventDefault(); var y=el.getBoundingClientRect().top+scrollY-(id==='home'?0:(id==='docs'?110:70));
+  try{ window.scrollTo({top:y,behavior:RM?'auto':'smooth'}); }catch(err){ window.scrollTo(0,y); }
+  if(id==='main'){ el.setAttribute('tabindex','-1'); el.focus({preventScroll:true}); }
+});
+
+/* ---------- menu ---------- */
+var menu=$('#menu'), mb=$('#menuBtn'), nav=$('#nav'), mbg=$('#menuBg');
+function buildMenu(){ $('#menuList').innerHTML=$$('#links a').map(function(a){ return '<li><a href="'+a.getAttribute('href')+'"><small>'+a.querySelector('small').textContent+'</small>'+a.querySelector('span').textContent+'</a></li>'; }).join(''); }
+function openMenu(){ menu.classList.add('open'); mbg.classList.add('open'); mb.setAttribute('aria-expanded','true'); mb.setAttribute('aria-label',T('بستن منو','Close menu')); nav.classList.remove('hide');
+  var f=$('#menuList a'); if(f) f.focus({preventScroll:true});
+  if(HAS&&!RM) G.fromTo('#menuList li',{x:-14,autoAlpha:0},{x:0,autoAlpha:1,duration:.45,stagger:.035,ease:'power3.out'}); }
+function closeMenu(refocus){ menu.classList.remove('open'); mbg.classList.remove('open'); mb.setAttribute('aria-expanded','false'); mb.setAttribute('aria-label',T('باز کردن منو','Open menu')); if(refocus) mb.focus(); }
+mb.addEventListener('click',function(){ menu.classList.contains('open')?closeMenu(true):openMenu(); });
+mbg.addEventListener('click',function(){ closeMenu(false); });
+menu.addEventListener('click',function(e){ if(e.target.closest('a')) closeMenu(false); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&menu.classList.contains('open')) closeMenu(true); });
+
+/* ---------- gallery + lightbox ---------- */
+var IMG='assets/img/';
+var GAL={
+  sma:{l:['داروی بیماران SMA','SMA medication'],i:[['sma-1.jpg','تحویل داروی بیماران SMA در داروخانه‌ی هلال احمر مشهد','Delivering SMA medication at the Red Crescent pharmacy, Mashhad'],['sma-2.jpg','تحویل داروی بیماران SMA در داروخانه‌ی هلال احمر مشهد','Delivering SMA medication at the Red Crescent pharmacy, Mashhad'],['sma-3.jpg','بازدید از واحد کاردرمانی هلال احمر','Visiting the Red Crescent occupational therapy unit'],['sma-4.jpg','جلسه‌ی هماهنگی خدمات دارویی و کاردرمانی بیماران SMA','Coordinating pharmacy and occupational therapy services for SMA patients'],['sma-5.jpg','در کنار همکاران تیم درمان','With colleagues from the care team']]},
+  dist:{l:['شرکت‌های پخش','Distributors'],i:[['dist-1.jpg','جلسه‌ی همکاری در شرکت بهستان پخش','Partnership meeting at Behestan Pakhsh'],['dist-2.jpg','همکاری و توسعه‌ی خدمات داروخانه','Working together to expand pharmacy services'],['dist-3.jpg','شرکت توزیع داروپخش، مرکز مشهد','Daru Pakhsh distribution company, Mashhad branch'],['dist-4.jpg','جلسه‌ی همکاری با شرکت‌های پخش','Partnership meeting with pharmaceutical distributors'],['dist-5.jpg','جلسه‌ی همکاری با شرکت‌های پخش','Partnership meeting with pharmaceutical distributors']]},
+  fda:{l:['غذا و دارو','Food & Drug'],i:[['fda-1.jpg','جلسه‌ی توسعه‌ی خدمات با معاونت غذا و دارو','Service development meeting with the Food and Drug Deputy'],['fda-2.jpg','جلسه‌ی توسعه‌ی خدمات با معاونت غذا و دارو','Service development meeting with the Food and Drug Deputy']]},
+  train:{l:['آموزش فروش','Sales training'],i:[['training-1.jpg','جلسه‌ی آموزش فروش به پرسنل داروخانه','Sales training session for pharmacy staff']]}
+};
+var cap=function(x){ return LANG==='en'?x[2]:x[1]; };
+var lb=$('#lb'), set=[], k=0;
+function show(i){ k=(i+set.length)%set.length; $('#lbImg').src=set[k][0]; $('#lbImg').alt=set[k][1]; $('#lbCap').textContent=set[k][1]+'  |  '+num(k+1)+T(' از ',' / ')+num(set.length); }
+function openLB(l,i){ set=l; show(i); try{ if(!lb.open) lb.showModal(); }catch(e){ lb.setAttribute('open',''); } }
+$('#lbNext').onclick=function(){show(k+1);}; $('#lbPrev').onclick=function(){show(k-1);};
+$('#lbClose').onclick=function(){ lb.close(); };
+lb.addEventListener('click',function(e){ if(e.target===lb) lb.close(); });
+lb.addEventListener('keydown',function(e){ var rtl=LANG!=='en'; if(e.key==='ArrowLeft') show(k+(rtl?1:-1)); if(e.key==='ArrowRight') show(k+(rtl?-1:1)); });
+var ALL=[]; Object.keys(GAL).forEach(function(g){ GAL[g].i.forEach(function(x){ ALL.push([IMG+x[0],x,g]); }); });
+var galEl=$('#gal'), galKey='all';
+function renderGal(key,quiet){
+  galKey=key;
+  var l=ALL.filter(function(x){ return key==='all'||x[2]===key; });
+  var pairs=l.map(function(x){return [x[0],cap(x[1])];});
+  galEl.innerHTML=''; galEl.className='gal'+(l.length===1?' c1':(l.length<5?' c2':''));
+  var bigOK=l.length>=5&&(l.length+3)%4===0;
+  SL=SL.filter(function(o){ return !o.gal; });
+  l.forEach(function(x,i){
+    if(bigOK&&i===2){ var d=document.createElement('div'); d.className='gi big ss'; galEl.appendChild(d); makeSS(d,l.map(function(y){return y[1];}),i,function(k){ openLB(pairs,k); }); return; }
+    var b=document.createElement('button'); b.type='button'; b.className='gi'; b.setAttribute('aria-label',T('نمایش بزرگ: ','Enlarge: ')+cap(x[1]));
+    b.innerHTML='<img loading="lazy" alt=""><span></span>'; b.querySelector('img').src=x[0]; b.querySelector('img').alt=cap(x[1]); b.querySelector('span').textContent=cap(x[1]);
+    b.onclick=function(){ openLB(pairs,i); }; galEl.appendChild(b);
+  });
+  var withVid=(key==='all'||key==='sma');
+  $('#gcount').textContent=num(l.length)+T(' تصویر',' photos')+(withVid?T(' و ۱ ویدیو',' and 1 video'):'');
+  $('#vid').hidden=!withVid; if(!withVid){ try{ $('#smaVid').pause(); }catch(e){} }
+  if(HAS&&!RM&&!quiet){ G.fromTo(galEl.children,{clipPath:'inset(100% 0 0 0)',y:30},{clipPath:'inset(0% 0 0 0)',y:0,duration:.9,stagger:.06,ease:'expo.out',onComplete:function(){ ST&&ST.refresh(); }}); }
+}
+var fl=$('#filters');
+function buildFilters(){
+  fl.innerHTML='';
+  [['all',['همه','All']]].concat(Object.keys(GAL).map(function(g){return [g,GAL[g].l];})).forEach(function(p){
+    var b=document.createElement('button'); b.type='button'; b.textContent=T(p[1][0],p[1][1]); b.setAttribute('aria-pressed',p[0]===galKey?'true':'false');
+    b.onclick=function(){ $$('button',fl).forEach(function(o){o.setAttribute('aria-pressed','false');}); b.setAttribute('aria-pressed','true'); renderGal(p[0]); };
+    fl.appendChild(b);
+  });
+}
+$$('[data-vid]').forEach(function(a){ a.addEventListener('click',function(){ var b=$('#filters button'); if(b) b.click(); setTimeout(function(){ var v=$('#vid'); try{ window.scrollTo({top:v.getBoundingClientRect().top+scrollY-90,behavior:RM?'auto':'smooth'}); }catch(e){} },30); },true); });
+$$('[data-gal]').forEach(function(b){ b.addEventListener('click',function(){ var g=GAL[b.getAttribute('data-gal')]; openLB(g.i.map(function(x){return [IMG+x[0],cap(x)];}),0); }); });
+var DOCS=[['assets/docs/cert-faracoach.jpg','گواهی کوچ سطح یک، مؤسسه بین‌المللی فراکوچ','Level 1 coach certificate, FaraCoach International Institute'],
+  ['assets/docs/cert-disc.jpg','گواهی مدرس رسمی DISC، کلینیک استعدادیابی و کسب‌وکار سینا','Certified DISC trainer, Sina Talent and Business Clinic'],
+  ['assets/docs/cert-hr.jpg','گواهی تحلیل شایستگی روان‌شناختی منابع انسانی، کلینیک سینا','HR psychological competency analysis, Sina Talent and Business Clinic'],
+  ['assets/docs/cert-mahan-fa.jpg','گواهینامه‌ی مشاور حرفه‌ای مدیریت کسب‌وکار، مؤسسه آموزش عالی آزاد ماهان','Professional business management consultant, Mahan Higher Education Institute'],
+  ['assets/docs/cert-mahan.jpg','گواهی مشاوره‌ی اقتصادی و سرمایه‌گذاری، مدرسه‌ی کسب‌وکار ماهان','Economic and investment consultancy, Mahan Business School']];
+$$('[data-doc]').forEach(function(b){ b.onclick=function(){ openLB(DOCS.map(function(d){return [d[0],cap(d)];}),+b.getAttribute('data-doc')); }; });
+
+/* ---------- resume viewer ---------- */
+var pv=$('#pdfv');
+$('#pdfOpen').addEventListener('click',function(){ try{ pv.showModal(); }catch(e){ pv.setAttribute('open',''); } var b=$('.pdf-b',pv); b.scrollTop=0; });
+$('#pdfClose').addEventListener('click',function(){ pv.close(); });
+pv.addEventListener('click',function(e){ if(e.target===pv) pv.close(); });
+$('#pdfPrint').addEventListener('click',function(){
+  var ims=$$('.pdf-b img',pv); ims.forEach(function(im){ im.loading='eager'; });
+  Promise.all(ims.map(function(im){ return im.decode?im.decode().catch(function(){}):null; })).then(function(){
+    root.classList.add('print-resume'); var t0=Date.now();
+    try{ window.print(); }catch(e){}
+    setTimeout(function(){ root.classList.remove('print-resume'); },400);
+    if(Date.now()-t0<60) toast(T('چاپ در این نما در دسترس نیست؛ فایل PDF را دانلود و چاپ کنید','Printing is not available in this view; download the PDF and print it'));
+  });
+});
+/* download: native link when hosted; the viewer's save prompt inside Claude */
+var dlNs=null, inClaude=!!(window.claude&&typeof window.claude.use==='function');
+if(inClaude){ Promise.resolve(window.claude.use('downloads')).then(function(d){ dlNs=d; }).catch(function(){}); }
+$('#pdfDl').addEventListener('click',function(e){
+  if(!inClaude) return;
+  e.preventDefault();
+  if(!dlNs){ toast(T('دانلود در این نما در دسترس نیست','Download is not available in this view')); return; }
+  fetch(this.getAttribute('href')).then(function(r){ return r.blob(); })
+    .then(function(b){ return dlNs.save({filename:LANG==='en'?'Sina-Dehghan-Resume-EN.pdf':'Sina-Dehghan-Resume-FA.pdf',data:b}); })
+    .then(function(){ toast(T('فایل رزومه ذخیره شد','Resume saved')); },function(err){ if(err&&err.code==='declined') return; toast(T('دانلود انجام نشد؛ دوباره امتحان کنید','Download failed; please try again')); });
+});
+
+/* ---------- project slides ---------- */
+var SLIDES={
+  kasri:[['slide-k1.jpg','ثبت کسری','Shortage log'],['slide-k2.jpg','فرم سفارش','Order form'],['slide-k3.jpg','تأیید مسئول فنی','Pharmacist approval']],
+  ei:[['slide-e1.jpg','صفحه‌ی آغاز','Start screen'],['slide-e2.jpg','پنج مهارت','Five skills'],['slide-e3.jpg','تحلیل پاسخ‌ها','Response analysis']]
+};
+var SL=[];
+function makeSS(el,list,start,onOpen){
+  el.innerHTML='<div class="slides">'+list.map(function(s,i){ return '<img src="'+IMG+s[0]+'" alt="" loading="lazy" class="'+(i===start?'on':'')+'">'; }).join('')+
+    '<b class="s-cap"></b><b class="s-num"></b><div class="s-prog"><i></i></div></div><button type="button" class="ss-open"></button>';
+  var box=$('.slides',el);
+  var o={box:box,list:list,i:start,busy:false,vis:false,hover:false,start:performance.now(),elapsed:0,imgs:$$('img',box),dots:[],capEl:$('.s-cap',box),numEl:$('.s-num',box),bar:$('.s-prog i',box),gal:true,openEl:$('.ss-open',el)};
+  o.openEl.addEventListener('click',function(){ onOpen(o.i); });
+  el.addEventListener('pointerenter',function(){ o.hover=true; }); el.addEventListener('pointerleave',function(){ o.hover=false; o.start=performance.now(); o.elapsed=0; });
+  new IntersectionObserver(function(es){ o.vis=es[0].isIntersecting; }).observe(el);
+  SL.push(o); paint(o);
+}
+$$('[data-slides]').forEach(function(m){
+  var key=m.getAttribute('data-slides'), list=SLIDES[key], box=document.createElement('div'); box.className='slides';
+  box.innerHTML=list.map(function(s,i){ return '<img src="'+IMG+s[0]+'" alt="" loading="lazy" class="'+(i?'':'on')+'">'; }).join('')+
+    '<span class="s-cap"></span><div class="s-dots">'+list.map(function(s,i){ return '<button type="button"><i></i></button>'; }).join('')+'</div><div class="s-prog"><i></i></div>';
+  m.appendChild(box);
+  var o={box:box,list:list,i:0,busy:false,vis:false,hover:false,t:null,start:0,imgs:$$('img',box),dots:$$('.s-dots button',box),capEl:$('.s-cap',box),bar:$('.s-prog i',box)};
+  SL.push(o);
+  o.dots.forEach(function(d,i){ d.addEventListener('click',function(){ go(o,i); restart(o); }); });
+  box.addEventListener('pointerenter',function(){ o.hover=true; }); box.addEventListener('pointerleave',function(){ o.hover=false; restart(o); });
+  new IntersectionObserver(function(es){ o.vis=es[0].isIntersecting; if(o.vis) restart(o); }).observe(box);
+  paint(o);
+});
+function paint(o){ var s=o.list[o.i]; o.capEl.textContent=T(s[1],s[2]); if(o.numEl) o.numEl.textContent=num(o.i+1)+' / '+num(o.list.length); if(o.openEl) o.openEl.setAttribute('aria-label',T('نمایش بزرگ: ','Enlarge: ')+T(s[1],s[2])); o.imgs.forEach(function(im,j){ im.alt=T(s[1],s[2]); }); o.dots.forEach(function(d,j){ d.setAttribute('aria-current',j===o.i?'true':'false'); d.setAttribute('aria-label',T('اسلاید ','Slide ')+num(j+1)+': '+T(o.list[j][1],o.list[j][2])); }); }
+function slidesLang(){ SL.forEach(paint); }
+function go(o,n){
+  if(n===o.i||o.busy) return; var cur=o.imgs[o.i], nx=o.imgs[n];
+  if(RM){ cur.classList.remove('on'); nx.classList.add('on'); o.i=n; paint(o); return; }
+  o.busy=true; nx.classList.add('in'); void nx.offsetWidth; nx.classList.add('go');
+  setTimeout(function(){ cur.classList.remove('on'); nx.classList.remove('in','go'); nx.classList.add('on'); o.i=n; o.busy=false; paint(o); },880);
+  o.i=n; paint(o); o.i=n;
+}
+var DUR=3400;
+function restart(o){ o.start=performance.now(); }
+function slideTick(now){
+  SL.forEach(function(o){
+    if(RM){ o.bar.style.width='0'; return; }
+    if(!o.vis||o.hover||document.hidden){ o.start=now-(o.elapsed||0); return; }
+    o.elapsed=now-o.start; var p=Math.min(1,o.elapsed/DUR); o.bar.style.width=(p*p*100)+'%';
+    if(p>=1){ go(o,(o.i+1)%o.list.length); o.start=now; o.elapsed=0; }
+  });
+  requestAnimationFrame(slideTick);
+}
+requestAnimationFrame(function(t){ SL.forEach(function(o){ o.start=t; }); slideTick(t); });
+
+/* ---------- lab ---------- */
+var PANELS={
+  kasri:{src:'beta/kasri.html',url:'dr-sina-dehghan / beta / kasri',img:'assets/img/project-kasri.jpg',t:['دفتر کسری هوشمند','Smart shortage log'],p:['نسخه‌ی کامل پنل با داده‌های نمونه‌ی ساختگی بارگذاری می‌شود.','The full panel loads with fictional sample data.'],
+    keys:['kasri_entries_v1','kasri_batches_v1','kasri_drafts_v1','kasri_settings_v1','kasri_orders_v1'],flag:'beta_seed_kasri',
+    tr:[['در تب «ثبت کسری» نام یک دارو، تعداد و واحد را بنویسید و ثبت کنید.','In tab 1 (shortage log), enter a medicine, quantity and unit, and save it.'],['در «سفارش‌دهنده» موجودی و مصرف سه‌ماهه را وارد کنید، اقلام را تیک بزنید و خروجی سفارش بسازید.','In tab 2 (orderer), add stock and three-month usage, tick items and create an order.'],['در «تأیید مسئول فنی» برای هر قلم «بگیر» یا «نگیر» بزنید و تأیید نهایی کنید.','In tab 3 (pharmacist approval), accept or reject each item and finalize the order.'],['گزارش روزانه را ببینید و خروجی اکسل بگیرید.','Open the daily report and export it to Excel.']]},
+  ei:{src:'beta/ei.html',url:'dr-sina-dehghan / beta / ei-panel',img:'assets/img/project-ei.jpg',t:['پنل هوش هیجانی','Emotional intelligence panel'],p:['پنج بخش تمرین با یک ژورنال نمونه بارگذاری می‌شود.','Five practice sections load with a sample journal.'],
+    keys:['ei-worksheet-v1','ei-worksheet-tab'],flag:'beta_seed_ei',
+    tr:[['«یک نفس با هم» را بزنید و سه نفس هدایت‌شده بکشید.','Use the guided-breathing button for three calm breaths.'],['«شروع تمرین» را بزنید و در ژورنال، یک تجربه‌ی هیجانی بنویسید.','Start the practice and write one emotional experience in the journal.'],['به تب «تحلیل» بروید و الگوهای هیجانی و شاخص مکث را ببینید.','Open the analysis tab to see emotional patterns and the pause index.']]}
+};
+var cur='kasri', loaded=false, dev=$('#device'), screen=$('#screen');
+function labTexts(){
+  var P=PANELS[cur];
+  $('#tryList').innerHTML=P.tr.map(function(x){ return '<li><span>'+T(x[0],x[1])+'</span></li>'; }).join('');
+  $('#posterT').textContent=T(P.t[0],P.t[1]); $('#posterP').textContent=T(P.p[0],P.p[1]);
+  var f=$('iframe',screen); if(f) f.title=T(P.t[0],P.t[1])+T(' (نسخه‌ی بتا)',' (beta)');
+}
+function setPanel(id,autoload){
+  cur=id; var P=PANELS[id];
+  $$('.lab-tab').forEach(function(t){ var on=t.dataset.panel===id; t.setAttribute('aria-selected',on?'true':'false'); t.tabIndex=on?0:-1; });
+  dev.setAttribute('aria-labelledby','tab-'+id);
+  $('#urlTxt').textContent=P.url;
+  var fr=$('iframe',screen); if(fr) fr.remove(); var ld=$('.loading',screen); if(ld) ld.remove();
+  loaded=false;
+  $('#posterImg').src=P.img; labTexts();
+  if(autoload){ load(); } else { $('#poster').hidden=false; }
+  if(HAS&&!RM) G.fromTo(screen,{autoAlpha:.4,scale:.985},{autoAlpha:1,scale:1,duration:.5,ease:'power2.out'});
+}
+function load(){
+  var P=PANELS[cur]; $('#poster').hidden=true;
+  var ld=document.createElement('div'); ld.className='loading'; ld.textContent=T('در حال بارگذاری پنل…','Loading the panel…'); screen.appendChild(ld);
+  var f=document.createElement('iframe'); f.title=T(P.t[0],P.t[1])+T(' (نسخه‌ی بتا)',' (beta)'); f.src=P.src; f.setAttribute('loading','eager');
+  f.addEventListener('load',function(){ ld.remove(); });
+  screen.appendChild(f); loaded=true;
+}
+$$('.lab-tab').forEach(function(t){ t.addEventListener('click',function(){ setPanel(t.dataset.panel,loaded); }); });
+$('.lab-tabs').addEventListener('keydown',function(e){ if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight') return; var nx=cur==='kasri'?'ei':'kasri'; setPanel(nx,loaded); $('#tab-'+nx).focus(); });
+$('#useBtn').addEventListener('click',load);
+$$('[data-open-lab]').forEach(function(a){ a.addEventListener('click',function(){ setPanel(a.getAttribute('data-open-lab'),true); }); });
+function resetPanel(seed){
+  var P=PANELS[cur];
+  try{ P.keys.forEach(function(k){ localStorage.removeItem(k); }); if(seed) localStorage.removeItem(P.flag); else localStorage.setItem(P.flag,'off'); }catch(e){ toast(T('حافظه‌ی مرورگر در دسترس نیست','Browser storage is not available')); return; }
+  try{ sessionStorage.removeItem('kasri_tab'); }catch(e){}
+  setPanel(cur,true); toast(seed?T('داده‌ی نمونه بازگردانده شد','Sample data restored'):T('پنل خالی شد؛ از صفر شروع کنید','Panel cleared; start from scratch'));
+}
+function twoStep(btn,fn){ btn.addEventListener('click',function(){ if(btn.dataset.arm){ delete btn.dataset.arm; btn.textContent=btn.dataset.lbl; fn(); return; } btn.dataset.lbl=btn.textContent; btn.dataset.arm='1'; btn.textContent=T('مطمئنید؟ دوباره بزنید','Sure? Tap again'); setTimeout(function(){ if(btn.dataset.arm){ delete btn.dataset.arm; btn.textContent=btn.dataset.lbl; } },3500); }); }
+twoStep($('#seedBtn'),function(){ resetPanel(true); });
+twoStep($('#emptyBtn'),function(){ resetPanel(false); });
+var maxB=$('#maxBtn');
+function setMax(on){ dev.classList.toggle('max',on); maxB.setAttribute('aria-pressed',on?'true':'false'); maxB.setAttribute('aria-label',on?T('کوچک کردن پنل','Shrink panel'):T('بزرگ‌نمایی پنل','Enlarge panel')); root.classList.toggle('lock',on); }
+maxB.addEventListener('click',function(){ setMax(!dev.classList.contains('max')); if(!loaded) load(); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&dev.classList.contains('max')) setMax(false); });
+
+/* ---------- marquee content ---------- */
+function buildMarquee(){
+  var W_FA=['داروسازی','توسعه‌ی بازار دارو','کوچینگ کسب‌وکار','هوش هیجانی','سلامت دیجیتال','مسئول فنی داروخانه','مشاوره‌ی کسب‌وکار'];
+  var W_EN=['Pharmacy','Pharma market development','Business coaching','Emotional intelligence','Digital health','Responsible pharmacist','Business consulting'];
+  var STAR='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg>';
+  var setHTML='<div class="mq-set">'+(LANG==='en'?W_EN:W_FA).map(function(w){ return '<span>'+w+'</span>'+STAR; }).join('')+'</div>';
+  $('#mq1').innerHTML=setHTML+setHTML+setHTML;
+}
+
+/* ---------- equal project cards ---------- */
+function fitHeads(){
+  $$('.sec .h2, .path .h2').forEach(function(el){
+    el.style.fontSize=''; if(innerWidth<1100) return;
+    var fs=parseFloat(getComputedStyle(el).fontSize), g=0, r=document.createRange();
+    function cw(){ r.selectNodeContents(el); return r.getBoundingClientRect().width; }
+    while(cw()>el.clientWidth-4&&fs>22&&g++<60){ fs-=1; el.style.fontSize=fs+'px'; }
+  });
+}
+function equalCards(){
+  var cs=$$('.pj'); cs.forEach(function(c){ c.style.height=''; });
+  if(innerWidth<861) return;
+  var h=Math.max.apply(null,cs.map(function(c){ return c.offsetHeight; }));
+  cs.forEach(function(c){ c.style.height=h+'px'; });
+}
+
+/* ---------- first paint in the chosen language ---------- */
+applyLang(); setPanel('kasri',false); fitHeads(); equalCards();
+var eqT; addEventListener('resize',function(){ clearTimeout(eqT); eqT=setTimeout(function(){ fitHeads(); equalCards(); if(HAS) ST.refresh(); },200); });
+
+function countUp(el){
+  var to=+el.getAttribute('data-count');
+  if(!HAS||RM){ el.textContent=num(to); return; }
+  var o={v:0}; G.to(o,{v:to,duration:2.6,ease:'power2.in',onUpdate:function(){ el.textContent=num(Math.round(o.v)); }});
+}
+
+/* ---------- language switch ---------- */
+var ctx=null, mm=null;
+$('#langBtn').addEventListener('click',function(){
+  var y=scrollY, frac=y/Math.max(1,document.documentElement.scrollHeight);
+  LANG=LANG==='en'?'fa':'en'; try{ localStorage.setItem('sd-lang',LANG); }catch(e){}
+  if(ctx){ ctx.revert(); } if(mm){ mm.revert(); }
+  applyLang(); fitHeads(); equalCards();
+  if(HAS&&!RM){ initMotion(false); fitHeads(); ST.refresh(); }
+  else { staticFinish(); }
+  window.scrollTo(0,Math.round(frac*document.documentElement.scrollHeight));
+});
+
+function staticFinish(){ $('#b1').style.transform='scaleX(1)'; $('#path').classList.add('no-pin'); }
+
+/* ---------- no GSAP: finish here ---------- */
+if(!HAS||RM){
+  window.__introDone=true; window.__killIntro();
+  staticFinish();
+  return;
+}
+
+G.registerPlugin(ST);
+G.defaults({ease:'expo.out'});
+
+/* split words (keeps Persian letters joined) */
+function split(el){
+  var walk=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null), nodes=[], n;
+  while((n=walk.nextNode())) nodes.push(n);
+  nodes.forEach(function(t){
+    var parts=t.nodeValue.split(/(\s+)/), frag=document.createDocumentFragment();
+    parts.forEach(function(p){
+      if(!p) return;
+      if(/^\s+$/.test(p)){ frag.appendChild(document.createTextNode(p)); return; }
+      var w=document.createElement('span'); w.className='w'; var i=document.createElement('span'); i.className='wi'; i.textContent=p; w.appendChild(i); frag.appendChild(w);
+    });
+    t.parentNode.replaceChild(frag,t);
+  });
+  return $$('.wi',el);
+}
+
+/* ---------- hero canvas: drifting skeletal formulas of common drugs (runs once) ---------- */
+(function(){
+  var c=$('#net'), x=c.getContext('2d'), W=0,H=0,D=Math.min(2,window.devicePixelRatio||1), mols=[], on=true, px=0,py=0,tx=0,ty=0, mx=-9999,my=-9999, raf;
+  var NAMES=[['پاراستامول','Paracetamol'],['آسپرین','Aspirin'],['ایبوپروفن','Ibuprofen'],['سالیسیلیک اسید','Salicylic acid']];
+  var R=[[0,-1],[.866,-.5],[.866,.5],[0,1],[-.866,.5],[-.866,-.5]];
+  var RB=[[0,1,2],[1,2,1],[2,3,2],[3,4,1],[4,5,2],[5,0,1]];          /* benzene: 2 = double bond (drawn inside) */
+  function M(extra,bonds,labels){ return {p:R.concat(extra),b:RB.concat(bonds),l:labels||{}}; }
+  var LIB=[
+    /* paracetamol */ M([[0,-2],[0,2],[.866,2.5],[.866,3.5],[1.732,2]],[[0,6,1],[3,7,1],[7,8,1],[8,9,3],[8,10,1]],{6:'OH',7:'NH',9:'O'}),
+    /* aspirin */     M([[0,-2],[-.866,-2.5],[.866,-2.5],[1.732,-1],[2.598,-.5],[2.598,.5],[3.464,-1]],[[0,6,1],[6,7,3],[6,8,1],[1,9,1],[9,10,1],[10,11,3],[10,12,1]],{7:'O',8:'OH',9:'O',11:'O'}),
+    /* ibuprofen */   M([[0,-2],[.866,-2.5],[.866,-3.5],[1.732,-2],[0,2],[-.866,2.5],[.866,2.5],[.866,3.5],[1.732,2]],[[0,6,1],[6,7,1],[7,8,1],[7,9,1],[3,10,1],[10,11,1],[10,12,1],[12,13,3],[12,14,1]],{13:'O',14:'OH'}),
+    /* salicylic acid */ M([[0,-2],[-.866,-2.5],[.866,-2.5],[-1.732,-1]],[[0,6,1],[6,7,3],[6,8,1],[5,9,1]],{7:'O',8:'OH',9:'OH'})
+  ];
+  function size(){ var r=c.getBoundingClientRect(); W=r.width; H=r.height; c.width=W*D; c.height=H*D; x.setTransform(D,0,0,D,0,0);
+    var n=Math.round(Math.min(12,Math.max(5,W*H/110000))); mols=[];
+    for(var i=0;i<n;i++){ var d=.55+Math.random()*.75; mols.push({k:i%LIB.length,m:LIB[i%LIB.length],x:Math.random()*W,y:Math.random()*H,s:(12+Math.random()*10)*d+4,a:Math.random()*6.28,va:(Math.random()-.5)*.0012,vx:(Math.random()-.5)*.12*d,vy:(-.05-Math.random()*.12)*d,d:d,t:-Math.random()*1.2,g:0,ph:Math.random()*6.28}); }
+  }
+  function draw(){
+    x.clearRect(0,0,W,H);
+    px+=(tx-px)*.04; py+=(ty-py)*.04;
+    x.lineCap='round'; x.lineJoin='round'; x.textAlign='center'; x.textBaseline='middle';
+    mols.forEach(function(o){
+      o.x+=o.vx; o.y+=o.vy; o.a+=o.va;
+      var ext=o.s*5; if(o.y<-ext){ o.y=H+ext; o.x=Math.random()*W; o.t=0; } if(o.x<-ext) o.x=W+ext; if(o.x>W+ext) o.x=-ext;
+      if(o.t<1) o.t=Math.min(1,o.t+.007);
+      /* pointer: nearby formulas wake up, glow, drift aside and turn */
+      var ddx=o.x-mx, ddy=o.y-my, dist=Math.sqrt(ddx*ddx+ddy*ddy)||1, near=Math.max(0,1-dist/230);
+      o.g+=(near-o.g)*.08;
+      if(near>0){ o.x+=ddx/dist*near*.9; o.y+=ddy/dist*near*.9; o.a+=near*.006*(o.va>0?1:-1); }
+      o.ph+=.01;
+      var sc=o.s*(1+Math.sin(o.ph)*.025+o.g*.12);
+      var cs=Math.cos(o.a), sn=Math.sin(o.a), m=o.m, ox=o.x+px*o.d, oy=o.y+py*o.d;
+      var P=m.p.map(function(q){ return [ox+(q[0]*cs-q[1]*sn)*sc, oy+(q[0]*sn+q[1]*cs)*sc]; });
+      var alpha=(.035+.03*o.d)+o.g*.2;
+      var nb=m.b.length, shown=Math.max(0,o.t)*nb;
+      x.strokeStyle='rgba(248,195,91,'+alpha+')'; x.lineWidth=1.1;
+      m.b.forEach(function(b,bi){
+        if(bi>=shown) return;
+        var A=P[b[0]], B=P[b[1]], la=m.l[b[0]], lb=m.l[b[1]];
+        var part=Math.min(1,shown-bi); if(part<1){ B=[A[0]+(B[0]-A[0])*part, A[1]+(B[1]-A[1])*part]; lb=null; }
+        var dx=B[0]-A[0], dy=B[1]-A[1], L=Math.sqrt(dx*dx+dy*dy)||1, ux=dx/L, uy=dy/L;
+        var a0=la?o.s*.42:0, b0=lb?o.s*.42:0;
+        var x1=A[0]+ux*a0, y1=A[1]+uy*a0, x2=B[0]-ux*b0, y2=B[1]-uy*b0;
+        x.beginPath(); x.moveTo(x1,y1); x.lineTo(x2,y2); x.stroke();
+        if(b[2]===2){ /* inner ring line toward the ring centre */
+          var cx=ox, cy=oy, mx=(A[0]+B[0])/2, my=(A[1]+B[1])/2, kx=cx-mx, ky=cy-my, kl=Math.sqrt(kx*kx+ky*ky)||1, off=o.s*.18;
+          var nx=kx/kl*off, ny=ky/kl*off, sh=.18*L;
+          x.beginPath(); x.moveTo(A[0]+nx+ux*sh,A[1]+ny+uy*sh); x.lineTo(B[0]+nx-ux*sh,B[1]+ny-uy*sh); x.stroke();
+        } else if(b[2]===3){ /* exocyclic double bond, drawn parallel */
+          var off2=o.s*.14; x.beginPath(); x.moveTo(x1-uy*off2,y1+ux*off2); x.lineTo(x2-uy*off2,y2+ux*off2); x.stroke();
+        }
+      });
+      if(o.t>=1){
+        x.fillStyle='rgba(248,195,91,'+(alpha+.02)+')'; x.font='600 '+Math.round(sc*.62)+'px "Segoe UI",Tahoma,sans-serif';
+        Object.keys(m.l).forEach(function(k){ var q=P[k]; x.fillText(m.l[k],q[0],q[1]); });
+      }
+    });
+    if(on) raf=requestAnimationFrame(draw);
+  }
+  size(); draw();
+  var rt; addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(size,200); });
+  var hero=$('#home');
+  hero.addEventListener('pointermove',function(e){ var r=c.getBoundingClientRect(); mx=e.clientX-r.left; my=e.clientY-r.top; tx=(e.clientX/innerWidth-.5)*-18; ty=(e.clientY/innerHeight-.5)*-12; });
+  hero.addEventListener('pointerleave',function(){ tx=ty=0; mx=my=-9999; });
+  new IntersectionObserver(function(es){ var v=es[0].isIntersecting; if(v&&!on){ on=true; draw(); } else if(!v){ on=false; cancelAnimationFrame(raf); } }).observe(hero);
+  document.addEventListener('visibilitychange',function(){ if(document.hidden){ on=false; cancelAnimationFrame(raf);} else if(!on){ on=true; draw(); } });
+})();
+
+/* photo parallax + magnetic buttons (once) */
+if(fine){ var ph=$('#hphoto'); var pqx=G.quickTo(ph,'x',{duration:.8,ease:'power3'}), pqy=G.quickTo(ph,'y',{duration:.8,ease:'power3'});
+  $('#home').addEventListener('pointermove',function(e){ pqx((e.clientX/innerWidth-.5)*-24); pqy((e.clientY/innerHeight-.5)*-18); });
+  $$('.mag, .c-row .btn, .nav .pill').forEach(function(b){
+    var qx=G.quickTo(b,'x',{duration:.5,ease:'power3'}), qy=G.quickTo(b,'y',{duration:.5,ease:'power3'});
+    b.addEventListener('pointermove',function(e){ var r=b.getBoundingClientRect(); qx((e.clientX-r.left-r.width/2)*.25); qy((e.clientY-r.top-r.height/2)*.35); });
+    b.addEventListener('pointerleave',function(){ qx(0); qy(0); });
+  });
+  var cv=$('#cover');
+  $('#coverWrap').addEventListener('pointermove',function(e){ var r=this.getBoundingClientRect(), px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5; cv.style.transform='rotateY('+(-14+px*26)+'deg) rotateX('+(4-py*18)+'deg)'; });
+  $('#coverWrap').addEventListener('pointerleave',function(){ cv.style.transform=''; });
+}
+
+/* nav hide on scroll (once) */
+ST.create({start:0,end:'max',onUpdate:function(s){ if(menu.classList.contains('open')) return; nav.classList.toggle('hide',s.direction===1&&s.scroll()>400); }});
+
+/* ---------- intro (first load only) ---------- */
+function runIntro(heroIn){
+  if(!root.classList.contains('has-intro')){ window.__introDone=true; heroIn(); return; }
+  var bonds=$$('#molb path'), found=$('#i-found'), tc=$('#tc'), t0=performance.now(), live=true;
+  bonds.forEach(function(p){ var L=p.getTotalLength(); p.style.strokeDasharray=L; p.style.strokeDashoffset=L; });
+  function tick(){ if(!live) return; var ms=performance.now()-t0, s=Math.floor(ms/1000), f=Math.floor((ms%1000)/40);
+    tc.textContent='TC 00:00:'+String(s).padStart(2,'0')+':'+String(f).padStart(2,'0'); requestAnimationFrame(tick); }
+  tick();
+  var pc={v:0}, cnt={v:0};
+  var tl=G.timeline({onComplete:done});
+  tl.to(bonds,{strokeDashoffset:0,duration:.5,stagger:.11,ease:'power2.inOut'},0)
+    .to(cnt,{v:11,duration:bonds.length*.11+.4,ease:'none',onUpdate:function(){ found.textContent=num(Math.round(cnt.v)); }},0)
+    .from('#mola > *',{autoAlpha:0,scale:.4,transformOrigin:'50% 50%',duration:.5,stagger:.08},.9)
+    .to(pc,{v:100,duration:2.6,ease:'power1.inOut',onUpdate:function(){ $('#ipct').textContent=num(Math.round(pc.v)); $('#ibar').style.width=pc.v+'%'; }},0)
+    .to('#iwords span',{yPercent:-100,duration:.55,ease:'expo.inOut'},.7)
+    .to('#iwords span',{yPercent:-200,duration:.55,ease:'expo.inOut'},1.4)
+    .to('#iwords span',{yPercent:-300,duration:.55,ease:'expo.inOut'},2.1)
+    .addLabel('out',2.95)
+    .to('.mol',{scale:1.6,autoAlpha:0,duration:.9,ease:'expo.in'},'out')
+    .to('#intro',{clipPath:'inset(0 0 100% 0)',duration:1.1,ease:'expo.inOut'},'out+=.35')
+    .add(function(){ root.classList.remove('lock'); heroIn(); },'out+=.75');
+  function done(){ live=false; window.__introDone=true; window.__killIntro(); ST.refresh(); }
+  $('#iskip').addEventListener('click',function(){ if(tl.time()<tl.labels.out) tl.seek('out'); tl.timeScale(1.6); });
+}
+
+/* ---------- everything that depends on language/direction ---------- */
+function initMotion(first){
+  var rtl=LANG!=='en';
+  ctx=G.context(function(){
+    /* hero */
+    var heroWords=[]; $$('[data-split="hero"]').forEach(function(el){ heroWords=heroWords.concat(split(el)); });
+    function heroIn(){
+      G.timeline().to(heroWords,{yPercent:0,duration:1.2,stagger:.08})
+        .to('[data-hero]',{autoAlpha:1,y:0,duration:1,stagger:.08},.15)
+        .to('#hphoto',{autoAlpha:1,scale:1,rotate:0,duration:1.6},.1)
+        .from('.cue',{autoAlpha:0,duration:.8},.8);
+    }
+    if(first){
+      G.set(heroWords,{yPercent:110}); G.set('[data-hero]',{autoAlpha:0,y:24}); G.set('#hphoto',{autoAlpha:0,scale:.86,rotate:-8});
+      runIntro(heroIn);
+    }
+    G.to('.hero-in',{yPercent:12,autoAlpha:.25,ease:'none',scrollTrigger:{trigger:'#home',start:'top top',end:'bottom top',scrub:true}});
+    G.to('#prog',{scaleX:1,ease:'none',scrollTrigger:{start:0,end:'max',scrub:.3}});
+
+    /* marquee */
+    G.fromTo('#mq1',{xPercent:0},{xPercent:-33.333,duration:75,ease:'none',repeat:-1});
+
+    /* headers, splits, rises */
+    $$('.sec .sh, .path .sh').forEach(function(sh){
+      G.from($('.sh-l',sh),{scaleX:0,duration:1.2,scrollTrigger:{trigger:sh,start:'top 88%'}});
+      G.from(sh.children,{autoAlpha:0,x:rtl?-16:16,duration:.9,stagger:.08,scrollTrigger:{trigger:sh,start:'top 88%'}});
+    });
+    $$('[data-split]:not([data-split="hero"])').forEach(function(h){
+      var ws=split(h);
+      G.from(ws,{yPercent:110,duration:1.1,stagger:.06,scrollTrigger:{trigger:h,start:'top 85%'}});
+    });
+    $$('[data-rise]').forEach(function(el){ G.from(el,{autoAlpha:0,y:40,duration:1.1,scrollTrigger:{trigger:el,start:'top 90%'}}); });
+
+    /* about paragraph scrub */
+    var p=$('#aboutTxt'), ws=[];
+    var walk=document.createTreeWalker(p,NodeFilter.SHOW_TEXT,null), nodes=[], n; while((n=walk.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){ var fr=document.createDocumentFragment(); t.nodeValue.split(/(\s+)/).forEach(function(s){ if(!s) return; if(/^\s+$/.test(s)){ fr.appendChild(document.createTextNode(s)); return; } var sp=document.createElement('span'); sp.className='sw'; sp.textContent=s; fr.appendChild(sp); ws.push(sp); }); t.parentNode.replaceChild(fr,t); });
+    G.fromTo(ws,{opacity:.14},{opacity:1,stagger:.1,ease:'none',scrollTrigger:{trigger:p,start:'top 80%',end:'bottom 45%',scrub:true}});
+
+    /* counters: from zero, normal then fast */
+    $$('[data-count]').forEach(function(el){ el.textContent=num(0); ST.create({trigger:el,start:'top 90%',once:true,onEnter:function(){ countUp(el); }}); });
+    G.from('.num',{y:40,autoAlpha:0,duration:1,stagger:.1,scrollTrigger:{trigger:'.nums',start:'top 88%'}});
+
+    /* proposal result */
+    ST.create({trigger:'#res',start:'top 85%',once:true,onEnter:function(){
+      var o={v:5}; G.to(o,{v:200,duration:2.2,ease:'power3.out',onUpdate:function(){ $('#resN').textContent=num(Math.round(o.v)); }});
+      G.fromTo('#b1',{scaleX:.025},{scaleX:1,duration:2.2,ease:'power3.out'});
+    }});
+
+    /* book */
+    G.from('#cover',{rotateY:-60,y:80,autoAlpha:0,duration:1.6,scrollTrigger:{trigger:'#book',start:'top 70%'}});
+    G.from('#stamp',{scale:0,rotate:-120,duration:1.1,ease:'back.out(2)',delay:.5,scrollTrigger:{trigger:'#book',start:'top 70%'}});
+    G.to('#coverWrap',{y:-40,ease:'none',scrollTrigger:{trigger:'#book',start:'top bottom',end:'bottom top',scrub:true}});
+
+    /* lab + skills */
+    G.from('.device',{rotateX:18,y:90,autoAlpha:0,transformPerspective:1400,duration:1.4,clearProps:'transform',scrollTrigger:{trigger:'.device',start:'top 92%'}});
+    G.from('.lab-tab',{y:30,autoAlpha:0,duration:.9,stagger:.1,scrollTrigger:{trigger:'.lab-tabs',start:'top 92%'}});
+    G.from('.side .card',{x:rtl?-30:30,autoAlpha:0,duration:1,stagger:.12,scrollTrigger:{trigger:'.side',start:'top 90%'}});
+    $$('.sk ul').forEach(function(u){ G.from(u.children,{x:rtl?-24:24,autoAlpha:0,duration:.8,stagger:.06,scrollTrigger:{trigger:u,start:'top 88%'}}); });
+  });
+
+  mm=G.matchMedia();
+  mm.add('(min-width: 960px)',function(){
+    var track=$('#track'), cards=$$('.pc',track);
+    function dist(){ return Math.max(0,track.scrollWidth-innerWidth); }
+    G.to(track,{x:function(){ return rtl?dist():-dist(); },ease:'none',scrollTrigger:{trigger:'#pathPin',start:'top top',end:function(){ return '+='+dist(); },pin:true,scrub:1,invalidateOnRefresh:true,anticipatePin:1,
+      onUpdate:function(s){ $('#pmeter').style.transform='scaleX('+s.progress+')'; $('#pnum').textContent=n2(Math.min(cards.length,1+Math.floor(s.progress*cards.length*0.999))); }}});
+    G.from(cards,{y:70,autoAlpha:0,duration:1.1,stagger:.08,scrollTrigger:{trigger:'#pathPin',start:'top 75%'}});
+    return function(){ G.set(track,{clearProps:'transform'}); };
+  });
+  mm.add('(max-width: 959px)',function(){
+    $('#path').classList.add('no-pin');
+    $$('.pc').forEach(function(c){ G.from(c,{y:50,autoAlpha:0,duration:1,scrollTrigger:{trigger:c,start:'top 90%'}}); });
+    return function(){ $('#path').classList.remove('no-pin'); };
+  });
+  mm.add('(min-width: 861px)',function(){
+    var cs=$$('.pj');
+    cs.forEach(function(c,i){ if(i<cs.length-1) G.to(c,{scale:.94,ease:'none',scrollTrigger:{trigger:cs[i+1],start:'top bottom',end:'top 20%',scrub:true}}); });
+  });
+  mm.add('(max-width: 860px)',function(){
+    $$('.pj').forEach(function(c){ G.from(c,{y:50,autoAlpha:0,duration:1,scrollTrigger:{trigger:c,start:'top 90%'}}); });
+  });
+
+  /* nav active (created last so pin spacing is known) */
+  ctx.add(function(){
+    var linkMap={}; $$('#links a').forEach(function(a){ linkMap[a.getAttribute('href').slice(1)]=a; });
+    function act(id){ $$('#links a').forEach(function(a){a.removeAttribute('aria-current');}); linkMap[id].setAttribute('aria-current','true'); }
+    ['home','about','path','projects','lab','gallery','skills','contact'].forEach(function(id){
+      var el=document.getElementById(id); if(!el) return;
+      ST.create({trigger:el,start:'top 45%',end:'bottom 45%',onToggle:function(s){ if(s.isActive) act(id); }});
+    });
+    ST.create({trigger:'#book',start:'top 45%',end:'bottom 45%',onToggle:function(s){ if(s.isActive) act('projects'); }});
+  });
+}
+initMotion(true); fitHeads();
+try{ document.fonts.ready.then(function(){ fitHeads(); equalCards(); ST.refresh(); }); }catch(e){}
+
+var rft; function lazyRefresh(){ clearTimeout(rft); rft=setTimeout(function(){ equalCards(); ST.refresh(); },250); }
+$$('img').forEach(function(im){ if(!im.complete) im.addEventListener('load',lazyRefresh,{once:true}); });
+new MutationObserver(function(){ $$('#gal img').forEach(function(im){ if(!im.complete&&!im._r){ im._r=1; im.addEventListener('load',lazyRefresh,{once:true}); } }); }).observe($('#gal'),{childList:true});
+addEventListener('load',function(){ equalCards(); ST.refresh(); });
+})();
+</script>
